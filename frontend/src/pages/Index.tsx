@@ -308,6 +308,72 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── ANNOUNCEMENTS / NEWS ── */}
+      <section className="py-20 bg-teal-50/40">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2 block">Latest Updates</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2">Announcements & News</h2>
+            <p className="text-muted-foreground">Stay updated with the latest from Al-Noor Madarsa</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Pinned announcement */}
+            <div className="md:col-span-2 group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-teal-100/60 hover:-translate-y-1 transition-all duration-300">
+              <div className="h-1.5 bg-gradient-to-r from-teal-500 to-emerald-600" />
+              <div className="p-7">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="bg-teal-600 text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">📌 Pinned</span>
+                  <span className="text-xs text-muted-foreground">April 10, 2026</span>
+                </div>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-3">
+                  New Admissions Open for 2026–27 Academic Year
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                  Al-Noor Madarsa is now accepting applications for Hifz-ul-Quran, Nazra Quran, and Alim courses for the upcoming academic year. Limited seats available — apply early to secure your place.
+                </p>
+                <Link to="/contact"
+                  className="inline-flex items-center gap-2 text-teal-700 font-semibold text-sm hover:gap-3 transition-all duration-200">
+                  Apply Now <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Side news cards */}
+            <div className="flex flex-col gap-6">
+              {[
+                {
+                  tag: "🎉 Event",
+                  date: "April 5, 2026",
+                  title: "Annual Quran Recitation Competition",
+                  desc: "Join us for our yearly Quran recitation event open to all students and community members.",
+                  color: "from-emerald-500 to-emerald-700",
+                },
+                {
+                  tag: "📢 Notice",
+                  date: "March 28, 2026",
+                  title: "Eid Holiday Schedule",
+                  desc: "Madarsa will remain closed from April 18–22 for Eid celebrations. Classes resume April 23.",
+                  color: "from-yellow-500 to-yellow-700",
+                },
+              ].map((item, i) => (
+                <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl border border-teal-100/60 hover:-translate-y-1 transition-all duration-300">
+                  <div className={`h-1.5 bg-gradient-to-r ${item.color}`} />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full">{item.tag}</span>
+                      <span className="text-[10px] text-muted-foreground">{item.date}</span>
+                    </div>
+                    <h4 className="font-heading text-base font-bold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FACULTY ── */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">

@@ -313,12 +313,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── FACULTY ── */}
-      <section className="py-8 sm:py-10 bg-background">
+      {/* ── FACULTY SPOTLIGHT ── */}
+      <section className="py-8 sm:py-10 bg-gradient-to-b from-background to-teal-50/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2 block">
-              {t("faculty.ourteam")}
+              {t("faculty.experienced")}
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">{t("faculty.title")}</h2>
             <p className="text-muted-foreground text-sm sm:text-base">{t("faculty.subtitle")}</p>

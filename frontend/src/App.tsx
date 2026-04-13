@@ -30,6 +30,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+   
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>

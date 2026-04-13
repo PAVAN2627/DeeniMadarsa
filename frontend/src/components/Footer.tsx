@@ -21,7 +21,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-gray-100 relative z-10">
+    <footer
+      className="relative z-10 border-t border-green-200"
+      style={{
+        background: "linear-gradient(135deg, #3ab87a 0%, #2da066 50%, #228a55 100%)",
+      }}
+    >
       <div className="container mx-auto px-4 py-4 md:py-6">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
@@ -32,24 +37,33 @@ const Footer = () => {
         >
           {/* Brand & Contact */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
-            <h3 className="font-heading text-lg font-bold mb-4 text-gray-900">
+            <h3 className="font-heading text-lg font-bold mb-4" style={{ color: "#ffffff" }}>
               {t("footer.contact")}
             </h3>
-            <div className="space-y-3 text-sm text-gray-600">
-              <a href="#" className="flex items-center gap-3 w-fit hover:text-black transition-colors group">
-                <span className="p-2 bg-gray-50 rounded-lg text-gray-400 group-hover:bg-gray-100 group-hover:text-black transition-all">
+            <div className="space-y-3 text-sm" style={{ color: "#e8fff4" }}>
+              <a href="#" className="flex items-center gap-3 w-fit transition-colors group hover:text-white">
+                <span
+                  className="p-2 rounded-lg transition-all"
+                  style={{ backgroundColor: "rgba(255,255,255,0.2)", color: "#ffffff" }}
+                >
                   <Phone className="w-4 h-4" />
                 </span>
                 {t("footer.phone")}
               </a>
-              <a href="#" className="flex items-center gap-3 w-fit hover:text-black transition-colors group">
-                <span className="p-2 bg-gray-50 rounded-lg text-gray-400 group-hover:bg-gray-100 group-hover:text-black transition-all">
+              <a href="#" className="flex items-center gap-3 w-fit transition-colors group hover:text-white">
+                <span
+                  className="p-2 rounded-lg transition-all"
+                  style={{ backgroundColor: "rgba(255,255,255,0.2)", color: "#ffffff" }}
+                >
                   <Mail className="w-4 h-4" />
                 </span>
                 {t("footer.email")}
               </a>
-              <div className="flex items-start gap-3 w-fit hover:text-black transition-colors group cursor-default">
-                <span className="p-2 bg-gray-50 rounded-lg text-gray-400 group-hover:bg-gray-100 group-hover:text-black transition-all mt-0.5">
+              <div className="flex items-start gap-3 w-fit transition-colors group cursor-default hover:text-white">
+                <span
+                  className="p-2 rounded-lg transition-all mt-0.5"
+                  style={{ backgroundColor: "rgba(255,255,255,0.2)", color: "#ffffff" }}
+                >
                   <MapPin className="w-4 h-4" />
                 </span>
                 <span className="leading-relaxed max-w-sm">{t("footer.address")}</span>
@@ -59,10 +73,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h3 className="font-heading text-lg font-bold mb-4 text-gray-900">
+            <h3 className="font-heading text-lg font-bold mb-4" style={{ color: "#ffffff" }}>
               {t("footer.quicklinks")}
             </h3>
-            <nav className="grid grid-cols-1 gap-2.5 text-sm text-gray-600">
+            <nav className="grid grid-cols-1 gap-2.5 text-sm" style={{ color: "#e8fff4" }}>
               {[
                 { to: "/", label: t("nav.home") },
                 { to: "/about", label: t("nav.about") },
@@ -74,9 +88,9 @@ const Footer = () => {
                 <Link
                   key={to}
                   to={to}
-                  className="w-fit flex items-center gap-2 hover:text-black hover:translate-x-1 transition-all duration-300"
+                  className="w-fit flex items-center gap-2 hover:text-white hover:translate-x-1 transition-all duration-300"
                 >
-                  <span className="w-1 h-1 rounded-full bg-gray-300" />
+                  <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#ffffff" }} />
                   {label}
                 </Link>
               ))}
@@ -85,7 +99,7 @@ const Footer = () => {
 
           {/* Follow Us */}
           <motion.div variants={itemVariants}>
-            <h3 className="font-heading text-lg font-bold mb-4 text-gray-900">
+            <h3 className="font-heading text-lg font-bold mb-4" style={{ color: "#ffffff" }}>
               {t("footer.followus")}
             </h3>
             <div className="flex flex-wrap gap-2.5">
@@ -97,7 +111,22 @@ const Footer = () => {
               ].map((platform) => (
                 <button
                   key={platform.name}
-                  className="p-2.5 border border-gray-100 bg-gray-50/50 rounded-xl text-gray-500 hover:bg-black hover:text-white hover:border-black transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10"
+                  className="p-2.5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{
+                    border: "1px solid rgba(255,255,255,0.4)",
+                    backgroundColor: "rgba(255,255,255,0.2)",
+                    color: "#ffffff",
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.backgroundColor = "#ffffff";
+                    e.currentTarget.style.color = "#228a55";
+                    e.currentTarget.style.borderColor = "#ffffff";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.2)";
+                    e.currentTarget.style.color = "#ffffff";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";
+                  }}
                   aria-label={platform.name}
                 >
                   {platform.icon}
@@ -109,7 +138,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <motion.div
-          className="mt-6 pt-4 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500"
+          className="mt-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.3)", color: "#e8fff4" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -117,9 +147,9 @@ const Footer = () => {
         >
           <p>{t("footer.copyright")}</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-black cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="w-1 h-1 rounded-full bg-gray-200" />
-            <span className="hover:text-black cursor-pointer transition-colors">Terms of Service</span>
+            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
+            <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,0.5)" }} />
+            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
           </div>
         </motion.div>
       </div>

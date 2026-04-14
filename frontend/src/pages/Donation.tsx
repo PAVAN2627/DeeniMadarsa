@@ -1,11 +1,33 @@
+import { useState, type FormEvent } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Layout from "@/components/Layout";
-import { Heart, CreditCard, Smartphone } from "lucide-react";
+import { Heart, CreditCard, Smartphone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 import { Link } from "react-router-dom";
 
 const Donation = () => {
   const { t } = useLanguage();
+  const [donationForm, setDonationForm] = useState({ name: "", email: "", phone: "", reason: "" });
+
+  const handleDonationSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    if (!donationForm.name || !donationForm.email || !donationForm.phone || !donationForm.reason) {
+      toast.error("Please complete all fields before donating.");
+      return;
+    }
+
+    const whatsappNumber = "919876543210";
+    const message = `*Donation Request from ${donationForm.name}*\n\n📧 Email: ${donationForm.email}\n📱 Phone: ${donationForm.phone}\n\n🎯 Reason: ${donationForm.reason}`;
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(url, "_blank");
+    toast.success("Opening WhatsApp to submit your donation request.");
+    setDonationForm({ name: "", email: "", phone: "", reason: "" });
+  };
 
   return (
     <Layout>
@@ -98,6 +120,55 @@ const Donation = () => {
             <p className="text-red-800 text-xs sm:text-sm leading-relaxed">
               {t("donation.jazakallah")}
             </p>
+          </div>
+
+          <div className="mt-10 bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-10">
+            <div className="mb-6 text-center">
+              <span className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2 block">Donation Need Form</span>
+              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">Tell us about your donation need</h3>
+              <p className="text-sm text-muted-foreground max-w-2xl mx-auto mt-2">
+                Share your name, email, phone number and reason, then tap Donate Now to continue on WhatsApp.
+              </p>
+            </div>
+            <form onSubmit={handleDonationSubmit} className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+              <Input
+                placeholder="Name"
+                value={donationForm.name}
+                onChange={(e) => setDonationForm({ ...donationForm, name: e.target.value })}
+                required
+                className="rounded-2xl border-slate-300 focus:ring-red-500"
+              />
+              <Input
+                type="email"
+                placeholder="Email ID"
+                value={donationForm.email}
+                onChange={(e) => setDonationForm({ ...donationForm, email: e.target.value })}
+                required
+                className="rounded-2xl border-slate-300 focus:ring-red-500"
+              />
+              <Input
+                type="tel"
+                placeholder="Phone Number"
+                value={donationForm.phone}
+                onChange={(e) => setDonationForm({ ...donationForm, phone: e.target.value })}
+                required
+                className="rounded-2xl border-slate-300 focus:ring-red-500"
+              />
+              <Textarea
+                placeholder="Reason for donation"
+                value={donationForm.reason}
+                onChange={(e) => setDonationForm({ ...donationForm, reason: e.target.value })}
+                required
+                rows={4}
+                className="rounded-2xl border-slate-300 focus:ring-red-500 resize-none sm:col-span-2"
+              />
+              <Button
+                type="submit"
+                className="sm:col-span-2 w-full bg-red-600 hover:bg-red-500 text-white rounded-2xl font-semibold flex items-center justify-center gap-2 py-3"
+              >
+                <Send className="w-4 h-4" /> Donate Now
+              </Button>
+            </form>
           </div>
         </div>
       </section>

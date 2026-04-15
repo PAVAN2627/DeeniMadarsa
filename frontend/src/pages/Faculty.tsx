@@ -7,14 +7,86 @@ const Faculty = () => {
   const { t } = useLanguage();
 
   const teachers = [
-    { nameKey: "faculty.member.manager", titleKey: "faculty.manager.title",   qualKey: "faculty.manager.qual",    img: "/manager.jpeg" },
-    { nameKey: "faculty.member.tabrez",  titleKey: "faculty.principal.title",  qualKey: "faculty.principal.qual",  img: "/principal.jpeg" },
-    { nameKey: "faculty.member.jabir",   titleKey: "faculty.viceprincipal.title", qualKey: "faculty.jabir.qual",  img: "/vice principal.jpeg" },
-    { nameKey: "faculty.member.usman",   titleKey: "faculty.teacher.title",    qualKey: "faculty.usman.qual",      img: "/founder.jpeg" },
-    { nameKey: "faculty.member.abdullah",titleKey: "faculty.teacher.title",    qualKey: "faculty.abdullah.qual",   img: "/manager.jpeg" },
-    { nameKey: "faculty.member.nizam",   titleKey: "faculty.teacher.title",    qualKey: "faculty.nizamuddin.qual", img: "/principal.jpeg" },
-    { nameKey: "faculty.member.jamshed", titleKey: "faculty.teacher.title",    qualKey: "faculty.jamshed.qual",    img: "/vice principal.jpeg" },
-    { nameKey: "faculty.member.pawan",   titleKey: "faculty.teacher.title",    qualKey: "faculty.pawan.qual",      img: "/founder.jpeg" },
+    {
+      nameKey: "faculty.member.manager",
+      titleKey: "faculty.manager.title",
+      qualKey: "faculty.manager.qual",
+      img: "/manager.jpeg",
+      ring: "border-teal-300",
+      stripe: "from-teal-500 to-emerald-600",
+      glow: "from-teal-100 to-emerald-100",
+      imgPos: "object-[50%_22%]",
+    },
+    {
+      nameKey: "faculty.member.tabrez",
+      titleKey: "faculty.principal.title",
+      qualKey: "faculty.principal.qual",
+      img: "/principal.jpeg",
+      ring: "border-amber-300",
+      stripe: "from-amber-500 to-yellow-600",
+      glow: "from-amber-100 to-yellow-100",
+      imgPos: "object-[50%_20%]",
+    },
+    {
+      nameKey: "faculty.member.jabir",
+      titleKey: "faculty.viceprincipal.title",
+      qualKey: "faculty.jabir.qual",
+      img: "/vice principal.jpeg",
+      ring: "border-cyan-300",
+      stripe: "from-cyan-500 to-sky-600",
+      glow: "from-cyan-100 to-sky-100",
+      imgPos: "object-[50%_18%]",
+    },
+    {
+      nameKey: "faculty.member.usman",
+      titleKey: "faculty.teacher.title",
+      qualKey: "faculty.usman.qual",
+      img: "/founder.jpeg",
+      ring: "border-rose-300",
+      stripe: "from-rose-500 to-pink-600",
+      glow: "from-rose-100 to-pink-100",
+      imgPos: "object-[50%_18%]",
+    },
+    {
+      nameKey: "faculty.member.abdullah",
+      titleKey: "faculty.teacher.title",
+      qualKey: "faculty.abdullah.qual",
+      img: "/manager.jpeg",
+      ring: "border-teal-300",
+      stripe: "from-teal-500 to-emerald-600",
+      glow: "from-teal-100 to-emerald-100",
+      imgPos: "object-[50%_22%]",
+    },
+    {
+      nameKey: "faculty.member.nizam",
+      titleKey: "faculty.teacher.title",
+      qualKey: "faculty.nizamuddin.qual",
+      img: "/principal.jpeg",
+      ring: "border-amber-300",
+      stripe: "from-amber-500 to-yellow-600",
+      glow: "from-amber-100 to-yellow-100",
+      imgPos: "object-[50%_20%]",
+    },
+    {
+      nameKey: "faculty.member.jamshed",
+      titleKey: "faculty.teacher.title",
+      qualKey: "faculty.jamshed.qual",
+      img: "/vice principal.jpeg",
+      ring: "border-cyan-300",
+      stripe: "from-cyan-500 to-sky-600",
+      glow: "from-cyan-100 to-sky-100",
+      imgPos: "object-[50%_18%]",
+    },
+    {
+      nameKey: "faculty.member.pawan",
+      titleKey: "faculty.teacher.title",
+      qualKey: "faculty.pawan.qual",
+      img: "/founder.jpeg",
+      ring: "border-rose-300",
+      stripe: "from-rose-500 to-pink-600",
+      glow: "from-rose-100 to-pink-100",
+      imgPos: "object-[50%_18%]",
+    },
   ];
 
   return (
@@ -62,10 +134,12 @@ const Faculty = () => {
             {teachers.map((teacher) => (
               <div key={teacher.nameKey}
                 className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg border border-teal-100/60 hover:-translate-y-1 transition-all duration-300">
-                <div className="h-1.5 bg-gradient-to-r from-teal-500 to-emerald-600" />
+                <div className={`h-1.5 bg-gradient-to-r ${teacher.stripe}`} />
                 <div className="p-4 sm:p-5 lg:p-6 text-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto rounded-full overflow-hidden border-4 border-teal-100 shadow-lg mb-3 sm:mb-4 group-hover:border-teal-400 transition-colors duration-300">
-                    <img src={teacher.img} alt={t(teacher.nameKey)} className="w-full h-full object-cover" loading="lazy" />
+                  <div className={`w-[clamp(6rem,18vw,7rem)] h-[clamp(7rem,20vw,8rem)] mx-auto p-1 rounded-2xl bg-gradient-to-br ${teacher.glow} mb-3 sm:mb-4`}>
+                    <div className={`w-full h-full rounded-xl overflow-hidden border-2 ${teacher.ring} shadow-lg`}>
+                      <img src={teacher.img} alt={t(teacher.nameKey)} className={`w-full h-full object-cover ${teacher.imgPos} transition-transform duration-500 group-hover:scale-110`} loading="lazy" />
+                    </div>
                   </div>
                   <h3 className="font-heading text-sm sm:text-base font-bold text-foreground">{t(teacher.nameKey)}</h3>
                   <p className="text-teal-600 text-xs font-medium mt-1">{t(teacher.titleKey)}</p>

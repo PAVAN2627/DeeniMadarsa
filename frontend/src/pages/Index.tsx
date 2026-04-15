@@ -93,9 +93,26 @@ const Index = () => {
   ];
 
   const teachers = [
-    { nameKey: "faculty.member.manager", titleKey: "faculty.manager.title", qualKey: "faculty.manager.qual", img: "/manager.jpeg" },
-    { nameKey: "faculty.member.tabrez", titleKey: "faculty.principal.title", qualKey: "faculty.principal.qual", img: "/principal.jpeg" },
-    { nameKey: "faculty.member.jabir", titleKey: "faculty.viceprincipal.title", qualKey: "faculty.jabir.qual", img: "/vice principal.jpeg" },
+    {
+      nameKey: "faculty.member.manager",
+      titleKey: "faculty.manager.title",
+      qualKey: "faculty.manager.qual",
+      img: "/manager.jpeg",
+      ring: "border-teal-300",
+      stripe: "from-teal-500 to-emerald-600",
+      glow: "from-teal-100 to-emerald-100",
+      imgPos: "object-[50%_22%]",
+    },
+    {
+      nameKey: "faculty.member.tabrez",
+      titleKey: "faculty.principal.title",
+      qualKey: "faculty.principal.qual",
+      img: "/principal.jpeg",
+      ring: "border-amber-300",
+      stripe: "from-amber-500 to-yellow-600",
+      glow: "from-amber-100 to-yellow-100",
+      imgPos: "object-[50%_20%]",
+    },
   ];
 
   const slide = slides[current];
@@ -311,10 +328,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2 block">
-              {t("faculty.experienced")}
+              {t("home.leadership.badge")}
             </span>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">{t("faculty.title")}</h2>
-            <p className="text-muted-foreground text-sm sm:text-base">{t("faculty.subtitle")}</p>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">{t("home.leadership.heading")}</h2>
+            <p className="text-muted-foreground text-sm sm:text-base">{t("home.leadership.subheading")}</p>
           </div>
 
           {/* Founder message moved from About page */}
@@ -323,8 +340,11 @@ const Index = () => {
               <div className="h-1.5 bg-gradient-to-r from-amber-500 to-yellow-600" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 p-4 sm:p-5 lg:p-6 items-center">
                 <div className="md:col-span-1 flex justify-center">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-4 border-amber-100 shadow-lg">
-                    <img src="/founder.jpeg" alt="Founder" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="relative group">
+                    <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100" />
+                    <div className="relative w-[clamp(7rem,20vw,9rem)] h-[clamp(8rem,24vw,10rem)] rounded-2xl overflow-hidden border-4 border-amber-200 shadow-xl">
+                      <img src="/founder.jpeg" alt="Founder" className="w-full h-full object-cover object-[50%_18%] transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                    </div>
                   </div>
                 </div>
                 <div className="md:col-span-2 text-center md:text-left">
@@ -335,14 +355,16 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
             {teachers.map((tc) => (
               <div key={tc.nameKey}
                 className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-teal-100/60 text-center">
-                <div className="h-1.5 bg-gradient-to-r from-teal-500 to-emerald-600" />
+                <div className={`h-1.5 bg-gradient-to-r ${tc.stripe}`} />
                 <div className="p-4 sm:p-6">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-teal-100 shadow-lg mb-3 sm:mb-4 group-hover:border-teal-400 transition-colors duration-300">
-                    <img src={tc.img} alt={t(tc.nameKey)} className="w-full h-full object-cover" loading="lazy" />
+                  <div className={`w-[clamp(6rem,18vw,7rem)] h-[clamp(7rem,20vw,8rem)] mx-auto p-1 rounded-2xl bg-gradient-to-br ${tc.glow} mb-3 sm:mb-4`}>
+                    <div className={`w-full h-full rounded-xl overflow-hidden border-2 ${tc.ring} shadow-lg`}>
+                      <img src={tc.img} alt={t(tc.nameKey)} className={`w-full h-full object-cover ${tc.imgPos} transition-transform duration-500 group-hover:scale-110`} loading="lazy" />
+                    </div>
                   </div>
                   <h3 className="font-heading text-sm sm:text-base lg:text-lg font-bold text-foreground">{t(tc.nameKey)}</h3>
                   <p className="text-teal-600 text-xs sm:text-sm font-medium mt-1">{t(tc.titleKey)}</p>
@@ -353,7 +375,7 @@ const Index = () => {
           </div>
           <div className="text-center mt-8">
             <Link to="/faculty" className="text-teal-700 font-semibold hover:text-teal-600 transition-colors">
-              {t("faculty.title")} →
+              {t("home.leadership.viewFaculty")} →
             </Link>
           </div>
         </div>

@@ -146,6 +146,10 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.nizamuddin.qual": "Subjects: Hindi, Math",
     "faculty.jamshed.qual": "Subjects: Math, General Knowledge",
     "faculty.pawan.qual": "Subjects: English, Social Science",
+    "home.leadership.badge": "Leadership Team",
+    "home.leadership.heading": "Management & Leadership",
+    "home.leadership.subheading": "Founder, Manager and Principal",
+    "home.leadership.viewFaculty": "View Full Faculty",
     // Home page labels/news
     "home.news.pinned": "Pinned",
     "home.news.event": "Event",
@@ -300,6 +304,10 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.nizamuddin.qual": "مضامین: ہندی، ریاضی",
     "faculty.jamshed.qual": "مضامین: ریاضی، جنرل نالج",
     "faculty.pawan.qual": "مضامین: انگریزی، سماجی علوم",
+    "home.leadership.badge": "انتظامی ٹیم",
+    "home.leadership.heading": "انتظامیہ اور قیادت",
+    "home.leadership.subheading": "بانی، منیجر اور پرنسپل",
+    "home.leadership.viewFaculty": "تمام اساتذہ دیکھیں",
     // Courses page
     "courses.whatweoffer": "ہم کیا پیش کرتے ہیں",
     "courses.readytojoin": "اپنا سفر شروع کرنے کے لیے تیار ہیں؟",
@@ -441,6 +449,10 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.nizamuddin.qual": "विषय: हिंदी, गणित",
     "faculty.jamshed.qual": "विषय: गणित, सामान्य ज्ञान",
     "faculty.pawan.qual": "विषय: अंग्रेज़ी, सामाजिक विज्ञान",
+    "home.leadership.badge": "नेतृत्व टीम",
+    "home.leadership.heading": "प्रबंधन और नेतृत्व",
+    "home.leadership.subheading": "संस्थापक, प्रबंधक और प्रधानाचार्य",
+    "home.leadership.viewFaculty": "पूरा शिक्षक समूह देखें",
     // Home page labels/news
     "home.news.pinned": "पिन किया गया",
     "home.news.event": "कार्यक्रम",

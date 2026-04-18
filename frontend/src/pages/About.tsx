@@ -90,7 +90,7 @@ const About = () => {
       <section className="relative h-[65vh] sm:h-[75vh] lg:h-[85vh] min-h-[420px] flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
-          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg" alt="About hero" className="w-full h-full object-cover" />
+          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg" alt="About hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-teal-900/70" />
         </div>
 
@@ -106,13 +106,13 @@ const About = () => {
             <p className="text-white/75 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6 lg:mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
               {t("about.preview.text")}
             </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 items-start sm:items-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
               <Button asChild size="lg"
-                className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base shadow-xl hover:scale-105 transition-all duration-200">
+                className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base shadow-xl hover:scale-105 transition-all duration-200">
                 <Link to="/contact">{t("hero.apply")}</Link>
               </Button>
               <Button asChild size="lg"
-                className="w-full sm:w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base hover:scale-105 transition-all duration-200 shadow-none">
+                className="w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base hover:scale-105 transition-all duration-200 shadow-none">
                 <Link to="/donation">{t("hero.donate")}</Link>
               </Button>
             </div>
@@ -268,15 +268,15 @@ const About = () => {
               <p className="text-white/75 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 lg:mb-8 max-w-xl mx-auto leading-relaxed">
                 {t("about.jointext")}
               </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center items-center self-center">
                 <Button asChild size="lg"
-                  className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl hover:scale-105 transition-all duration-200">
+                  className="w-auto bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl hover:scale-105 transition-all duration-200">
                   <Link to="/contact" className="flex items-center justify-center gap-2">
                     {t("hero.apply")} <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </Link>
                 </Button>
                 <Button asChild size="lg"
-                  className="w-full sm:w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full hover:scale-105 transition-all duration-200">
+                  className="w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full hover:scale-105 transition-all duration-200">
                   <Link to="/donation">{t("hero.donate")}</Link>
                 </Button>
               </div>

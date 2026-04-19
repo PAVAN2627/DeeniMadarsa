@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Phone, Mail, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Phone, Mail, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative z-10 bg-gradient-to-br from-teal-900 via-teal-800 to-emerald-900">
-      <div className="container mx-auto px-4 py-8 sm:py-10 md:py-12">
+    <footer className="relative z-10 mt-2 sm:mt-3 md:mt-4 bg-gradient-to-br from-teal-900 via-teal-800 to-emerald-900">
+      <div className="container mx-auto px-4 pt-4 pb-8 sm:pt-6 sm:pb-10 md:pt-8 md:pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
           {/* Left: Brand + Follow Us */}
@@ -32,8 +32,6 @@ const Footer = () => {
             <h3 className="font-heading text-base font-bold mb-3 sm:mb-4 text-white">{t("footer.followus")}</h3>
             <div className="flex flex-wrap gap-2 sm:gap-2.5">
               {[
-                { name: "Facebook", icon: <Facebook className="w-4 h-4" /> },
-                { name: "Twitter", icon: <Twitter className="w-4 h-4" /> },
                 { name: "Instagram", icon: <Instagram className="w-4 h-4" /> },
                 { name: "YouTube", icon: <Youtube className="w-4 h-4" /> },
               ].map((p) => (
@@ -46,9 +44,9 @@ const Footer = () => {
           </div>
 
           {/* Middle: Quick Links */}
-          <div>
-            <h3 className="font-heading text-base font-bold mb-3 sm:mb-4 text-white">{t("footer.quicklinks")}</h3>
-            <nav className="flex flex-col gap-2 sm:gap-2.5 text-sm text-teal-200">
+          <div className="text-center">
+            <h3 className="font-heading text-lg font-bold mb-4 text-white border-b border-teal-700/50 pb-2">{t("footer.quicklinks")}</h3>
+            <nav className="mx-auto w-fit flex flex-col gap-2.5 text-sm text-teal-200 items-start text-left">
               {[
                 { to: "/about", label: t("nav.about") },
                 { to: "/courses", label: t("nav.courses") },
@@ -57,8 +55,8 @@ const Footer = () => {
                 { to: "/contact", label: t("nav.contact") },
               ].map(({ to, label }) => (
                 <Link key={to} to={to}
-                  className="w-fit flex items-center gap-2 hover:text-white hover:translate-x-1 transition-all duration-200">
-                  <span className="w-1 h-1 rounded-full bg-teal-400" />
+                  className="flex items-center gap-2 hover:text-white hover:translate-x-1 transition-all duration-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
                   {label}
                 </Link>
               ))}
@@ -75,7 +73,7 @@ const Footer = () => {
                 </span>
                 {t("footer.phone")}
               </a>
-              <a href="mailto:info@darululoomajmatia.com" className="flex items-center gap-3 w-fit hover:text-white transition-colors group">
+              <a href="mailto:darululoomjunaidiaajmalia@gmail.com" className="flex items-center gap-3 w-fit hover:text-white transition-colors group">
                 <span className="p-2 bg-teal-700/60 rounded-lg text-teal-300 group-hover:bg-teal-600 group-hover:text-white transition-all shrink-0">
                   <Mail className="w-4 h-4" />
                 </span>

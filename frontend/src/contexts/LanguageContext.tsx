@@ -154,7 +154,7 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.pawan.qual": "Subjects: English, Social Science",
     "home.leadership.badge": "Leadership Team",
     "home.leadership.heading": "Management & Leadership",
-    "home.leadership.subheading": "Founder, Manager and Principal",
+    "home.leadership.subheading": "Manager, Principal and Vice Principal",
     "home.leadership.viewFaculty": "View Full Faculty",
     // Home page labels/news
     "home.news.pinned": "Pinned",
@@ -318,7 +318,7 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.pawan.qual": "مضامین: انگریزی، سماجی علوم",
     "home.leadership.badge": "انتظامی ٹیم",
     "home.leadership.heading": "انتظامیہ اور قیادت",
-    "home.leadership.subheading": "بانی، منیجر اور پرنسپل",
+    "home.leadership.subheading": "منیجر، پرنسپل اور نائب پرنسپل",
     "home.leadership.viewFaculty": "تمام اساتذہ دیکھیں",
     // Courses page
     "courses.whatweoffer": "ہم کیا پیش کرتے ہیں",
@@ -463,7 +463,7 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.pawan.qual": "विषय: अंग्रेज़ी, सामाजिक विज्ञान",
     "home.leadership.badge": "नेतृत्व टीम",
     "home.leadership.heading": "प्रबंधन और नेतृत्व",
-    "home.leadership.subheading": "संस्थापक, प्रबंधक और प्रधानाचार्य",
+    "home.leadership.subheading": "प्रबंधक, प्रधानाचार्य और उप-प्रधानाचार्य",
     "home.leadership.viewFaculty": "पूरा शिक्षक समूह देखें",
     // Home page labels/news
     "home.news.pinned": "पिन किया गया",

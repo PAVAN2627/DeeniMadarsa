@@ -413,9 +413,9 @@ const Index = () => {
       </section>
 
       {/* ── FOUNDER'S MESSAGE ── */}
-      <section className="py-10 sm:py-14 bg-white">
+      <section className="py-6 sm:py-14 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-10">
+          <div className="text-center mb-6 sm:mb-10">
             <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4">
               <span className="w-2 h-2 rounded-full bg-amber-500" />
               <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("about.wordswisdom")}</span>
@@ -423,7 +423,7 @@ const Index = () => {
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.founder.title")}</h2>
           </div>
 
-          <div className="relative bg-gradient-to-br from-teal-900 to-emerald-950 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative bg-gradient-to-br from-teal-900 to-emerald-950 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
             {/* Dot pattern */}
             <div className="absolute inset-0 opacity-[0.06]"
               style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
@@ -433,10 +433,10 @@ const Index = () => {
 
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-0">
               {/* Founder image */}
-              <div className="flex items-center justify-center p-8 md:border-r border-white/10">
+              <div className="flex items-center justify-center p-5 sm:p-8 md:border-r border-white/10">
                 <div className="relative">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/30 to-teal-400/20 blur-xl scale-110" />
-                  <div className="relative w-40 h-48 sm:w-48 sm:h-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                  <div className="relative w-32 h-40 sm:w-48 sm:h-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                     <img src="/founder.jpeg" alt="Founder" className="w-full h-full object-cover object-top" />
                     <div className="absolute inset-0 bg-gradient-to-t from-teal-950/60 to-transparent" />
                   </div>
@@ -448,13 +448,13 @@ const Index = () => {
               </div>
 
               {/* Quote */}
-              <div className="md:col-span-2 p-8 sm:p-10 flex flex-col justify-center">
+              <div className="md:col-span-2 p-5 sm:p-10 flex flex-col justify-center">
                 {/* Large quote mark */}
-                <div className="text-amber-400/30 font-heading text-8xl leading-none mb-2 select-none">"</div>
-                <p className="font-heading text-lg sm:text-xl md:text-2xl text-white/90 italic leading-relaxed mb-6 -mt-6">
+                <div className="text-amber-400/30 font-heading text-6xl sm:text-8xl leading-none mb-1 sm:mb-2 select-none">"</div>
+                <p className="font-heading text-base sm:text-xl md:text-2xl text-white/90 italic leading-relaxed mb-4 sm:mb-6 -mt-3 sm:-mt-6">
                   {t("about.founder.text").replace(/^"|".*$/g, '').replace(/ — .*$/, '')}
                 </p>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <div className="h-px flex-1 bg-white/20" />
                   <div className="text-right">
                     <p className="font-heading text-amber-300 font-bold text-sm sm:text-base">Hazrat Syed Akmal Ahmad Ajmali</p>

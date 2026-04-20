@@ -10,9 +10,9 @@ import Layout from "@/components/Layout";
 import { CourseAPI, AnnouncementAPI } from "@/lib/api";
 
 const slides = [
-  { id: 1, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",    badge: "Est. 2004",      titleKey: "hero.welcome",      subtitleKey: "hero.subtitle" },
-  { id: 2, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",    badge: "20+ سال",        titleKey: "courses.title",     subtitleKey: "courses.subtitle" },
-  { id: 3, img: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",    badge: "500+ طلباء",     titleKey: "donation.subtitle", subtitleKey: "donation.message" },
+  { id: 1, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg",  badge: "Est. 2004",  titleKey: "hero.welcome",      subtitleKey: "hero.subtitle",       descKey: "hero.slide1.desc" },
+  { id: 2, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",    badge: "20+ سال",        titleKey: "courses.title",     subtitleKey: "courses.subtitle",    descKey: "hero.slide2.desc" },
+  { id: 3, img: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",    badge: "500+ طلباء",     titleKey: "donation.subtitle", subtitleKey: "donation.message",    descKey: "hero.slide3.desc" },
 ];
 
 const stats = [
@@ -70,14 +70,14 @@ const Index = () => {
     {
       id: 1,
       img: "/schoollogo.png",
-      alt: "Darul Uloom Jameenia Ajmaliya Logo",
+      alt: "Darul Uloom Junaidia Ajmalia Logo",
       imgClass: "w-[78%] h-[78%] object-contain",
       bgClass: "bg-gradient-to-br from-teal-50 to-teal-100",
     },
     {
       id: 2,
       img: "/building.jpeg",
-      alt: "Darul Uloom Jameenia Ajmaliya Building",
+      alt: "Darul Uloom Junaidia Ajmalia Building",
       imgClass: "w-full h-full object-cover",
       bgClass: "bg-teal-100",
     },
@@ -167,55 +167,54 @@ const Index = () => {
       glow: "from-amber-100 to-yellow-100",
       imgPos: "object-[50%_20%]",
     },
-    {
-      nameKey: "faculty.member.jabir",
-      titleKey: "faculty.viceprincipal.title",
-      qualKey: "faculty.jabir.qual",
-      img: "/vice principal.jpeg",
-      ring: "border-cyan-300",
-      stripe: "from-cyan-500 to-sky-600",
-      glow: "from-cyan-100 to-sky-100",
-      imgPos: "object-[50%_18%]",
-    },
   ];
 
   const slide = slides[current];
-  const founderMessage = t("about.founder.text");
-  const founderParts = founderMessage.split("—");
-  const founderQuote = founderParts[0]?.trim() ?? founderMessage;
-  const founderName = founderParts.slice(1).join("—").trim();
 
   return (
     <Layout>
       {/* ── SLIDER HERO ── */}
-      <section className="relative w-full h-[60vh] sm:h-[75vh] lg:h-[85vh] min-h-[450px] sm:min-h-[480px] overflow-x-hidden overflow-y-hidden">
+      <section className="relative w-full h-[72vh] sm:h-[75vh] lg:h-[85vh] min-h-[520px] sm:min-h-[480px] overflow-x-hidden overflow-y-hidden">
         {slides.map((s, i) => (
           <div key={s.id} className={`absolute inset-0 transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}>
             <img src={s.img} alt={`slide-${s.id}`} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-emerald-900/82 to-green-950/88" />
           </div>
         ))}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-3 sm:px-6 md:px-8 w-full overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-green-600/15 blur-3xl translate-x-1/3 translate-y-1/3" />
+          <div className="absolute inset-0 opacity-[0.04]"
+            style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        </div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 w-full overflow-hidden">
           <span key={`badge-${current}`}
-            className="inline-block bg-yellow-600/90 text-white text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4 lg:mb-6 animate-fade-in">
+            className="inline-block bg-yellow-500/95 text-white text-[11px] sm:text-xs font-bold uppercase tracking-widest px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full mb-4 sm:mb-4 lg:mb-6 animate-fade-in shadow-lg shadow-yellow-900/40">
             {slide.badge}
           </span>
           <h1 key={`title-${current}`}
-            className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 sm:mb-4 max-w-4xl leading-tight animate-fade-up">
+            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 max-w-4xl leading-tight animate-fade-up drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
             {t(slide.titleKey)}
           </h1>
           <p key={`sub-${current}`}
-            className="text-white/80 text-sm sm:text-base md:text-lg max-w-2xl mb-4 sm:mb-6 lg:mb-8 animate-fade-up px-2"
+            className="text-white text-[15px] sm:text-base md:text-lg max-w-2xl mb-2 sm:mb-3 animate-fade-up px-2 leading-relaxed"
             style={{ animationDelay: "0.15s" }}>
             {t(slide.subtitleKey)}
           </p>
-          <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 justify-center items-start sm:items-center self-start sm:self-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <p key={`desc-${current}`}
+            className="text-white text-base sm:text-lg md:text-xl max-w-2xl mb-5 sm:mb-6 lg:mb-8 animate-fade-up px-2 leading-relaxed"
+            style={{ animationDelay: "0.25s" }}>
+            {t(slide.descKey)}
+          </p>
+          <div className="flex flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button asChild size="lg"
-              className="bg-yellow-600 hover:bg-yellow-500 text-white font-semibold text-xs sm:text-sm px-5 sm:px-8 py-2 sm:py-3 rounded-full shadow-xl transition-all duration-200 hover:scale-105 w-auto">
+              className="bg-yellow-500 hover:bg-yellow-400 text-white font-semibold text-sm sm:text-sm px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-xl shadow-yellow-900/40 transition-all duration-200 hover:scale-105 w-auto">
               <Link to="/contact">{t("hero.apply")}</Link>
             </Button>
             <Button asChild size="lg"
-              className="bg-transparent border-2 border-white/60 text-white hover:bg-white/15 font-semibold text-xs sm:text-sm px-5 sm:px-8 py-2 sm:py-3 rounded-full transition-all duration-200 hover:scale-105 w-auto">
+              className="bg-transparent border-2 border-white/70 text-white hover:bg-white/15 font-semibold text-sm sm:text-sm px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-200 hover:scale-105 w-auto">
               <Link to="/donation">{t("hero.donate")}</Link>
             </Button>
           </div>
@@ -234,9 +233,9 @@ const Index = () => {
               className={`rounded-full transition-all duration-300 ${i === current ? "w-6 sm:w-8 h-2 sm:h-2.5 bg-yellow-500" : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/40 hover:bg-white/70"}`} />
           ))}
         </div>
-        <div className="absolute bottom-0 left-0 right-0 z-10">
-          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="hsl(var(--background))" />
+        <div className="absolute bottom-0 left-0 right-0 z-10 leading-none translate-y-px">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display:"block", marginBottom:"-1px" }}>
+            <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="#ffffff" />
           </svg>
         </div>
       </section>
@@ -288,16 +287,17 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <span className="text-sm font-bold uppercase tracking-widest text-teal-700 mb-3 block">
-                {t("about.whoweare")}
-              </span>
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
+              <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
+                <span className="w-2 h-2 rounded-full bg-teal-500" />
+                <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("about.whoweare")}</span>
+              </div>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-5 leading-tight">
                 {t("about.preview.title")}
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
                 {t("about.preview.text")}
               </p>
-              <Button asChild className="bg-teal-700 hover:bg-teal-600 text-white rounded-full px-7 group">
+              <Button asChild className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold rounded-full px-7 group shadow-lg hover:scale-105 transition-all duration-200">
                 <Link to="/about" className="flex items-center gap-2">
                   {t("about.preview.readmore")}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -312,11 +312,12 @@ const Index = () => {
       <section className="py-8 sm:py-10 bg-teal-50/40">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2 block">
-              {t("courses.whatweoffer")}
-            </span>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">{t("courses.title")}</h2>
-            <p className="text-muted-foreground text-sm sm:text-base">{t("courses.subtitle")}</p>
+            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 rounded-full bg-teal-500" />
+              <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("courses.whatweoffer")}</span>
+            </div>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">{t("courses.title")}</h2>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">{t("courses.subtitle")}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {courses.slice(0, 3).map((c, i) => {
@@ -360,13 +361,14 @@ const Index = () => {
       <section className="py-8 sm:py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2 block">
-              {t("home.news.latest")}
-            </span>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("home.news.latest")}</span>
+            </div>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">
               {t("home.news.heading")}
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base">
+            <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
               {t("home.news.subheading")}
             </p>
           </div>
@@ -410,45 +412,78 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── FACULTY SPOTLIGHT ── */}
-      <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-background to-teal-50/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10 sm:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2 block">
-              {t("home.leadership.badge")}
-            </span>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">{t("home.leadership.heading")}</h2>
-            <p className="text-muted-foreground text-sm sm:text-base">{t("home.leadership.subheading")}</p>
+      {/* ── FOUNDER'S MESSAGE ── */}
+      <section className="py-6 sm:py-14 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-6 sm:mb-10">
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("about.wordswisdom")}</span>
+            </div>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.founder.title")}</h2>
           </div>
 
-          {/* Founder message moved from About page */}
-          <div className="max-w-5xl mx-auto mb-6 sm:mb-8 lg:mb-10">
-            <div className="bg-white/95 backdrop-blur-sm rounded-3xl border border-teal-100/70 shadow-lg overflow-hidden">
-              <div className="h-1.5 bg-gradient-to-r from-amber-500 to-yellow-600" />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 p-4 sm:p-5 lg:p-6 items-center">
-                <div className="md:col-span-1 flex justify-center">
-                  <div className="relative group">
-                    <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 opacity-80" />
-                    <div className="relative w-[13rem] sm:w-[14.5rem] lg:w-[16rem] aspect-[4/5] rounded-2xl overflow-hidden border-4 border-amber-200 shadow-xl">
-                      <img src="/founder.jpeg" alt="Founder" className="w-full h-full object-cover object-[50%_18%] transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-                    </div>
+          <div className="relative bg-gradient-to-br from-teal-900 to-emerald-950 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+            {/* Dot pattern */}
+            <div className="absolute inset-0 opacity-[0.06]"
+              style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+            {/* Glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-0">
+              {/* Founder image */}
+              <div className="flex items-center justify-center p-5 sm:p-8 md:border-r border-white/10">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/30 to-teal-400/20 blur-xl scale-110" />
+                  <div className="relative w-32 h-40 sm:w-48 sm:h-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                    <img src="/founder.jpeg" alt="Founder" className="w-full h-full object-cover object-top" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-teal-950/60 to-transparent" />
+                  </div>
+                  {/* Name badge */}
+                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-max bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-center whitespace-nowrap">
+                    Sajjada Nashin
                   </div>
                 </div>
-                <div className="md:col-span-2 text-center md:text-left">
-                  <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-2">{t("about.founder.title")}</h3>
-                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed italic">{founderQuote}</p>
-                  {founderName && (
-                    <p className="text-foreground text-base sm:text-lg font-bold mt-2">{founderName}</p>
-                  )}
+              </div>
+
+              {/* Quote */}
+              <div className="md:col-span-2 p-5 sm:p-10 flex flex-col justify-center">
+                {/* Large quote mark */}
+                <div className="text-amber-400/30 font-heading text-6xl sm:text-8xl leading-none mb-1 sm:mb-2 select-none">"</div>
+                <p className="font-heading text-base sm:text-xl md:text-2xl text-white/90 italic leading-relaxed mb-4 sm:mb-6 -mt-3 sm:-mt-6">
+                  {t("about.founder.text").replace(/^"|".*$/g, '').replace(/ — .*$/, '')}
+                </p>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="h-px flex-1 bg-white/20" />
+                  <div className="text-right">
+                    <p className="font-heading text-amber-300 font-bold text-sm sm:text-base">Hazrat Syed Akmal Ahmad Ajmali</p>
+                    <p className="text-white/60 text-xs mt-0.5">Rahmatullah Alaih · Sajjada Nashin</p>
+                    <p className="text-white/50 text-xs">Dargah Shah Ajmal, Allahabad</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+      {/* ── FACULTY SPOTLIGHT ── */}
+      <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-background to-teal-50/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
+              <span className="w-2 h-2 rounded-full bg-teal-500" />
+              <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("home.leadership.badge")}</span>
+            </div>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">{t("home.leadership.heading")}</h2>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">{t("home.leadership.subheading")}</p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 max-w-6xl mx-auto">
             {teachers.map((tc) => (
               <div key={tc.nameKey}
-                className="group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 border border-teal-100/70 text-center w-full max-w-[21rem] md:max-w-none mx-auto">
+                className="group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 border border-teal-100/70 text-center w-full max-w-[21rem]">
                 <div className={`h-1.5 bg-gradient-to-r ${tc.stripe}`} />
                 <div className="p-4 sm:p-5 lg:p-6">
                   <div className={`w-[12.5rem] sm:w-[13.5rem] lg:w-[14.5rem] aspect-[4/5] mx-auto p-1 rounded-2xl bg-gradient-to-br ${tc.glow} mb-3`}>
@@ -472,25 +507,34 @@ const Index = () => {
       </section>
 
       {/* ── DONATION CTA ── */}
-      <section className="py-8 sm:py-10 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-gradient-to-br from-teal-800 to-emerald-900 rounded-3xl p-8 sm:p-10 md:p-14 text-center shadow-2xl relative overflow-hidden">
+      <section className="pt-6 sm:pt-8 lg:pt-10 pb-0 bg-white">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="w-full bg-gradient-to-br from-teal-800 to-emerald-900 rounded-3xl p-5 sm:p-7 lg:p-10 xl:p-12 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-5"
               style={{ backgroundImage: `repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)`, backgroundSize: "30px 30px" }} />
-            <div className="relative z-10">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-4 sm:mb-5">
-                <Heart className="w-6 h-6 sm:w-7 sm:h-7 text-yellow-400 animate-float" />
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
+              <div className="text-center lg:text-left lg:max-w-2xl">
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
+                <Heart className="w-4 h-4 text-amber-300" />
+                <span className="text-amber-200 text-xs font-bold uppercase tracking-widest">Support</span>
               </div>
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {t("donation.subtitle")}
-              </h2>
-              <p className="text-white/75 text-sm sm:text-base mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed">
-                {t("donation.text")}
-              </p>
-              <Button asChild size="lg"
-                className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold text-sm sm:text-base px-8 sm:px-10 rounded-full shadow-xl transition-all duration-200 hover:scale-105">
-                <Link to="/donation">{t("donation.button")}</Link>
-              </Button>
+                <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-tight">
+                  {t("donation.subtitle")}
+                </h2>
+                <p className="text-white/75 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  {t("donation.text")}
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center lg:justify-end items-center lg:items-center shrink-0">
+                <Button asChild size="lg"
+                  className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
+                  <Link to="/donation">{t("donation.button")}</Link>
+                </Button>
+                <Button asChild size="lg"
+                  className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
+                  <Link to="/contact">{t("nav.contact")}</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

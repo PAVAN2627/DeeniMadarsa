@@ -49,25 +49,38 @@ const Contact = () => {
     <Layout>
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-auto sm:h-[70vh] min-h-0 flex items-start sm:items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg" alt="Contact hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-teal-900/80" />
+          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg" alt="Contact" className="w-full h-full object-cover scale-110 transition-transform duration-[8s] ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-emerald-900/82 to-green-950/88" />
         </div>
-        <div className="relative z-10 container mx-auto px-4 text-center py-16 sm:py-20 md:py-24">
-          <span className="inline-block bg-yellow-600/90 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 sm:mb-6">
-            {t("contact.getintouch")}
-          </span>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-green-600/15 blur-3xl translate-x-1/3 translate-y-1/3" />
+          <div className="absolute inset-0 opacity-[0.04]"
+            style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center py-12 sm:py-14 md:py-16 max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+            <span className="text-yellow-300 text-xs font-bold uppercase tracking-widest">{t("contact.getintouch")}</span>
+          </div>
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
             {t("contact.title")}
           </h1>
-          <p className="text-white/75 text-base sm:text-lg max-w-xl mx-auto">
-            {t("contact.subtitle")}
+          <div className="flex items-center justify-center gap-2 mb-5">
+            <div className="h-1 w-12 bg-yellow-400 rounded-full" />
+            <div className="h-1 w-4 bg-yellow-400/50 rounded-full" />
+            <div className="h-1 w-2 bg-yellow-400/25 rounded-full" />
+          </div>
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            {t("hero.contact.desc")}
           </p>
         </div>
-        {/* Wave */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 leading-none translate-y-px">
-          <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display:"block", marginBottom:"-1px" }}>
+        <div className="absolute bottom-0 left-0 right-0 z-10 block leading-none translate-y-px" style={{ marginBottom: "-2px" }}>
+          <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display: "block", marginBottom: "-1px" }}>
             <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="#ffffff" />
           </svg>
         </div>
@@ -134,7 +147,7 @@ const Contact = () => {
                   <div className="space-y-4 sm:space-y-5">
                     {[
                       { icon: Phone, label: t("footer.phone"),   href: "tel:+919876543210" },
-                      { icon: Mail,  label: t("footer.email"),   href: "mailto:info@darululoomajmatia.com" },
+                      { icon: Mail,  label: t("footer.email"),   href: "mailto:darululoomjunaidiaajmalia@gmail.com" },
                       { icon: MapPin, label: t("footer.address"), href: null },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3 sm:gap-4 group">

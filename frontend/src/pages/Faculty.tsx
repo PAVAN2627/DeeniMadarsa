@@ -8,16 +8,6 @@ const Faculty = () => {
 
   const teachers = [
     {
-      nameKey: "faculty.member.manager",
-      titleKey: "faculty.manager.title",
-      qualKey: "faculty.manager.qual",
-      img: "/manager.jpeg",
-      ring: "border-teal-300",
-      stripe: "from-teal-500 to-emerald-600",
-      glow: "from-teal-100 to-emerald-100",
-      imgPos: "object-[50%_22%]",
-    },
-    {
       nameKey: "faculty.member.tabrez",
       titleKey: "faculty.principal.title",
       qualKey: "faculty.principal.qual",
@@ -29,9 +19,9 @@ const Faculty = () => {
     },
     {
       nameKey: "faculty.member.jabir",
-      titleKey: "faculty.viceprincipal.title",
+      titleKey: "faculty.teacher.title",
       qualKey: "faculty.jabir.qual",
-      img: "/vice principal.jpeg",
+      img: "/Hafiz Qari Jabir Hasan.jpeg",
       ring: "border-cyan-300",
       stripe: "from-cyan-500 to-sky-600",
       glow: "from-cyan-100 to-sky-100",
@@ -41,7 +31,7 @@ const Faculty = () => {
       nameKey: "faculty.member.usman",
       titleKey: "faculty.teacher.title",
       qualKey: "faculty.usman.qual",
-      img: "/founder.jpeg",
+      img: "/Hafiz Qari Imran Khan.jpeg",
       ring: "border-rose-300",
       stripe: "from-rose-500 to-pink-600",
       glow: "from-rose-100 to-pink-100",
@@ -51,37 +41,37 @@ const Faculty = () => {
       nameKey: "faculty.member.abdullah",
       titleKey: "faculty.teacher.title",
       qualKey: "faculty.abdullah.qual",
-      img: "/manager.jpeg",
+      img: "/Hafiz Abdullah Khan.jpeg",
       ring: "border-teal-300",
       stripe: "from-teal-500 to-emerald-600",
       glow: "from-teal-100 to-emerald-100",
       imgPos: "object-[50%_22%]",
     },
     {
-      nameKey: "faculty.member.nizam",
-      titleKey: "faculty.teacher.title",
-      qualKey: "faculty.nizamuddin.qual",
-      img: "/principal.jpeg",
-      ring: "border-amber-300",
-      stripe: "from-amber-500 to-yellow-600",
-      glow: "from-amber-100 to-yellow-100",
-      imgPos: "object-[50%_20%]",
-    },
-    {
       nameKey: "faculty.member.jamshed",
       titleKey: "faculty.teacher.title",
       qualKey: "faculty.jamshed.qual",
-      img: "/vice principal.jpeg",
+      img: "/Master Jamshed Khan.jpeg",
       ring: "border-cyan-300",
       stripe: "from-cyan-500 to-sky-600",
       glow: "from-cyan-100 to-sky-100",
       imgPos: "object-[50%_18%]",
     },
     {
+      nameKey: "faculty.member.nizam",
+      titleKey: "faculty.teacher.title",
+      qualKey: "faculty.nizamuddin.qual",
+      img: "/Master Md. Nizamuddin.jpeg",
+      ring: "border-amber-300",
+      stripe: "from-amber-500 to-yellow-600",
+      glow: "from-amber-100 to-yellow-100",
+      imgPos: "object-[50%_20%]",
+    },
+    {
       nameKey: "faculty.member.pawan",
       titleKey: "faculty.teacher.title",
       qualKey: "faculty.pawan.qual",
-      img: "/founder.jpeg",
+      img: "/Master Parvej Ahmad.jpeg",
       ring: "border-rose-300",
       stripe: "from-rose-500 to-pink-600",
       glow: "from-rose-100 to-pink-100",
@@ -92,31 +82,47 @@ const Faculty = () => {
   return (
     <Layout>
       {/* ── HERO ── */}
-      <section className="relative h-[60vh] sm:h-[75vh] lg:h-[85vh] min-h-[420px] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
+      <section className="relative h-auto sm:h-[80vh] min-h-0 flex items-start sm:items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg" alt="Faculty hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-teal-900/70" />
+          <img src="/faculty.jpeg" alt="Faculty" className="w-full h-full object-cover transition-transform duration-[8s] ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-emerald-900/82 to-green-950/88" />
         </div>
-        <div className="relative z-10 container mx-auto px-3 sm:px-4 text-center py-12 sm:py-16 md:py-20 lg:py-24">
-          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 lg:mb-5 leading-tight">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-green-600/15 blur-3xl translate-x-1/3 translate-y-1/3" />
+          <div className="absolute inset-0 opacity-[0.04]"
+            style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center py-12 sm:py-14 md:py-16 lg:py-20 max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="text-amber-300 text-xs font-bold uppercase tracking-widest">{t("faculty.ourteam")}</span>
+          </div>
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
             {t("faculty.title")}
           </h1>
-          <p className="text-white/75 text-sm sm:text-base md:text-lg max-w-xl mx-auto mb-4 sm:mb-6 lg:mb-8">
-            {t("faculty.subtitle")}
+          <div className="flex items-center justify-center gap-2 mb-5">
+            <div className="h-1 w-12 bg-amber-400 rounded-full" />
+            <div className="h-1 w-4 bg-amber-400/50 rounded-full" />
+            <div className="h-1 w-2 bg-amber-400/25 rounded-full" />
+          </div>
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            {t("hero.faculty.desc")}
           </p>
-          <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center items-start sm:items-center self-start sm:self-center">
+          <div className="flex flex-row flex-wrap gap-3 justify-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button asChild size="lg"
-              className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base shadow-xl hover:scale-105 transition-all duration-200">
+              className="bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-8 shadow-2xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
               <Link to="/contact">{t("hero.apply")}</Link>
             </Button>
             <Button asChild size="lg"
-              className="w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base hover:scale-105 transition-all duration-200">
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 rounded-full px-8 hover:scale-105 transition-all duration-200">
               <Link to="/courses">{t("nav.courses")}</Link>
             </Button>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 z-10 leading-none translate-y-px">
+        <div className="absolute bottom-0 left-0 right-0 z-10 block leading-none translate-y-px" style={{ marginBottom: "-2px" }}>
           <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display: "block", marginBottom: "-1px" }}>
             <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="#ffffff" />
           </svg>
@@ -127,13 +133,13 @@ const Faculty = () => {
       <section className="py-6 sm:py-8 lg:py-12 bg-white -mt-px">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2 block">{t("faculty.experienced")}</span>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">{t("faculty.title")}</h2>
+            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-teal-500" /><span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("faculty.experienced")}</span></div>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("faculty.title")}</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-7 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-7 max-w-6xl mx-auto">
             {teachers.map((teacher) => (
               <div key={teacher.nameKey}
-                className="group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-lg hover:shadow-xl border border-teal-100/70 hover:-translate-y-1.5 transition-all duration-300 w-full max-w-[21rem] sm:max-w-none mx-auto">
+                className="group bg-white/95 backdrop-blur-sm rounded-3xl overflow-hidden shadow-lg hover:shadow-xl border border-teal-100/70 hover:-translate-y-1.5 transition-all duration-300 w-full max-w-[21rem]">
                 <div className={`h-1.5 bg-gradient-to-r ${teacher.stripe}`} />
                 <div className="p-4 sm:p-5 lg:p-6 text-center">
                   <div className={`w-[12.5rem] sm:w-[13.5rem] lg:w-[14.5rem] aspect-[4/5] mx-auto p-1 rounded-2xl bg-gradient-to-br ${teacher.glow} mb-3`}>

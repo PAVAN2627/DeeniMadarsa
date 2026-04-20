@@ -68,13 +68,6 @@ const About = () => {
     { icon: BookOpen,      end: 50,  suffix: "+", labelKey: "about.achievements.scholars",  color: "from-cyan-500 to-cyan-700" },
   ];
 
-  const timeline = [
-    { year: "2004", textKey: "timeline.2004", side: "left" },
-    { year: "2006", textKey: "timeline.2006", side: "right" },
-    { year: "2010", textKey: "timeline.2010", side: "left" },
-    { year: "2015", textKey: "timeline.2015", side: "right" },
-    { year: "2024", textKey: "timeline.2024", side: "left" },
-  ];
 
   const values = [
     { icon: CheckCircle2, titleKey: "value.knowledge.title", descKey: "value.knowledge.desc" },
@@ -87,64 +80,72 @@ const About = () => {
     <Layout>
 
       {/* ── HERO ── */}
-      <section className="relative h-[65vh] sm:h-[75vh] lg:h-[85vh] min-h-[420px] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
+      <section className="relative h-auto sm:h-[80vh] min-h-0 flex items-start sm:items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg" alt="About hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-teal-900/70" />
+          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg" alt="About" className="w-full h-full object-cover scale-110 transition-transform duration-[8s] ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-teal-900/84 to-emerald-950/92" />
         </div>
-
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-3 sm:px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center py-12 sm:py-16 md:py-20 lg:py-24">
-          <div>
-            <span className="inline-block bg-amber-500/90 text-white text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4 lg:mb-6 animate-fade-in">
-              {t("about.est")}
-            </span>
-            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 lg:mb-5 leading-tight animate-fade-up">
-              {t("about.title")}
-            </h1>
-            <p className="text-white/75 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6 lg:mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-              {t("about.preview.text")}
-            </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 items-start sm:items-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <Button asChild size="lg"
-                className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base shadow-xl hover:scale-105 transition-all duration-200">
-                <Link to="/contact">{t("hero.apply")}</Link>
-              </Button>
-              <Button asChild size="lg"
-                className="w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base hover:scale-105 transition-all duration-200 shadow-none">
-                <Link to="/donation">{t("hero.donate")}</Link>
-              </Button>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full border border-white/5" />
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.04]"
+            style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 py-12 sm:py-14 md:py-16 lg:py-20 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <span className="text-amber-300 text-xs font-bold uppercase tracking-widest">{t("about.est")}</span>
+              </div>
+              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
+                {t("about.title")}
+              </h1>
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-5">
+                <div className="h-1 w-12 bg-amber-400 rounded-full" />
+                <div className="h-1 w-4 bg-amber-400/50 rounded-full" />
+                <div className="h-1 w-2 bg-amber-400/25 rounded-full" />
+              </div>
+              <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+                {t("hero.about.desc")}
+              </p>
+              <div className="flex flex-row flex-wrap gap-3 justify-center md:justify-start animate-fade-up" style={{ animationDelay: "0.3s" }}>
+                <Button asChild size="lg"
+                  className="bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-8 shadow-2xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
+                  <Link to="/contact">{t("hero.apply")}</Link>
+                </Button>
+                <Button asChild size="lg"
+                  className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 rounded-full px-8 hover:scale-105 transition-all duration-200">
+                  <Link to="/donation">{t("hero.donate")}</Link>
+                </Button>
+              </div>
             </div>
-          </div>
 
-          {/* Hero visual card */}
-          <div className="hidden md:flex justify-center">
-            <div className="relative w-48 sm:w-56 md:w-64 lg:w-72 h-48 sm:h-56 md:h-64 lg:h-72">
-              {/* Rotated background frame */}
-              <div className="absolute inset-0 rounded-3xl bg-white/10 backdrop-blur-sm border border-white/20 rotate-6" />
-              {/* Main image card */}
-              <div className="absolute inset-0 rounded-3xl overflow-hidden border-2 border-white/20 -rotate-3 shadow-2xl">
-                <img
-                  src="/building.jpeg"
-                  alt="Darul Uloom Jameenia Ajmaliya Building"
-                  className="w-full h-full object-cover"
-                />
-                {/* Label overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-teal-900/90 to-transparent px-3 sm:px-4 py-3 sm:py-4">
-                  <p className="font-heading text-white text-xs sm:text-sm font-bold text-center break-words">Darul Uloom Jameenia Ajmaliya</p>
-                  <p className="text-white/70 text-xs text-center">Mehdur, Ghazipur — Est. 2004</p>
+            {/* Building card on desktop */}
+            <div className="hidden md:flex justify-center items-center">
+              <div className="relative w-72 h-80">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-amber-400/20 to-teal-400/20 blur-xl scale-110" />
+                <div className="absolute inset-0 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/15 rotate-6 shadow-xl" />
+                <div className="absolute inset-0 rounded-3xl overflow-hidden border border-white/25 -rotate-2 shadow-2xl">
+                  <img src="/building.jpeg" alt="Building" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-950/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-amber-400" />
+                      <span className="text-amber-300 text-xs font-bold uppercase tracking-wider">Est. 2004</span>
+                    </div>
+                    <p className="font-heading text-white text-sm font-bold">Darul Uloom Jameenia Ajmaliya</p>
+                    <p className="text-white/60 text-xs mt-0.5">Mehdur, Ghazipur, U.P.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Wave */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 leading-none translate-y-px">
+        <div className="absolute bottom-0 left-0 right-0 z-10 block leading-none translate-y-px" style={{ marginBottom: "-2px" }}>
           <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display: "block", marginBottom: "-1px" }}>
-            <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z"
-              fill="#ffffff" />
+            <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="#ffffff" />
           </svg>
         </div>
       </section>
@@ -163,38 +164,56 @@ const About = () => {
       {/* ── HISTORY ── */}
       <section className="py-6 sm:py-8 lg:py-10 bg-gradient-to-b from-background to-teal-50/40">
         <div className="container mx-auto px-3 sm:px-4 max-w-3xl text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2 sm:mb-3 block">{t("about.ourstory")}</span>
-          <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4 lg:mb-6">{t("about.history.title")}</h2>
+          <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-teal-500" /><span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("about.ourstory")}</span></div>
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">{t("about.history.title")}</h2>
           <p className="text-muted-foreground text-sm sm:text-base lg:text-lg leading-relaxed">{t("about.history.text")}</p>
         </div>
       </section>
 
-      {/* ── TIMELINE ── */}
-      <section className="py-6 sm:py-8 lg:py-10 bg-teal-50/40">
-        <div className="container mx-auto px-3 sm:px-4 max-w-4xl">
-          <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2 block">{t("about.milestones")}</span>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">{t("about.ourjourney")}</h2>
+      {/* ── GALLERY ── */}
+      <section className="py-8 sm:py-12 bg-teal-50/40 overflow-hidden">
+        <div className="text-center mb-8 sm:mb-10 px-4">
+          <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
+            <span className="w-2 h-2 rounded-full bg-teal-500" />
+            <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">Our Campus</span>
           </div>
-          <div className="relative">
-            {/* Center line — desktop only */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-teal-200 hidden md:block" />
-            <div className="flex flex-col gap-6 sm:gap-10">
-              {timeline.map((item, i) => (
-                <div key={i} className={`relative flex items-center gap-4 sm:gap-6 ${item.side === "right" ? "md:flex-row-reverse" : "md:flex-row"} flex-col md:flex-row`}>
-                  <div className="md:w-[calc(50%-2rem)] w-full">
-                    <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-teal-100/60 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                      <span className="inline-block bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-2 sm:mb-3">{item.year}</span>
-                      <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{t(item.textKey)}</p>
-                    </div>
-                  </div>
-                  {/* Dot */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-amber-500 border-4 border-white shadow-md z-10" />
-                  {/* Spacer */}
-                  <div className="md:w-[calc(50%-2rem)] hidden md:block" />
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Photo Gallery</h2>
+          <p className="text-muted-foreground text-sm mt-2">A glimpse into life at Darul Uloom Jameenia Ajmaliya</p>
+        </div>
+
+        {/* Single auto-scroll row */}
+        <div className="relative">
+          {/* Left fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-teal-50/40 to-transparent z-10 pointer-events-none" />
+          {/* Right fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-teal-50/40 to-transparent z-10 pointer-events-none" />
+
+          <div className="flex gap-4 sm:gap-5 animate-[scroll-left_28s_linear_infinite] w-max px-4">
+            {[
+              { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg", label: "Darul Uloom Campus" },
+              { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",     label: "Campus View" },
+              { src: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",     label: "Students Assembly" },
+              { src: "/building.jpeg",                                       label: "Main Building" },
+              // duplicate for seamless loop
+              { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg", label: "Darul Uloom Campus" },
+              { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",     label: "Campus View" },
+              { src: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",     label: "Students Assembly" },
+              { src: "/building.jpeg",                                       label: "Main Building" },
+            ].map((img, i) => (
+              <div key={i}
+                className="group relative shrink-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-teal-100"
+                style={{ width: "clamp(260px, 35vw, 420px)", height: "clamp(180px, 24vw, 290px)" }}>
+                <img
+                  src={img.src}
+                  alt={img.label}
+                  className="w-full h-full object-contain bg-white group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-950/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="bg-white/90 backdrop-blur-sm text-teal-800 text-xs font-bold px-3 py-1 rounded-full shadow">{img.label}</span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -203,8 +222,8 @@ const About = () => {
       <section className="py-6 sm:py-8 lg:py-10 bg-background">
         <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-teal-600 mb-2 block">{t("about.purpose")}</span>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">{t("about.missionvision")}</h2>
+            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-teal-500" /><span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("about.purpose")}</span></div>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.missionvision")}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {/* Mission */}
@@ -237,15 +256,15 @@ const About = () => {
       <section className="py-6 sm:py-8 lg:py-10 bg-teal-50/40">
         <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-2 block">{t("about.whatdrivesus")}</span>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">{t("about.corevalues")}</h2>
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-amber-500" /><span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("about.whatdrivesus")}</span></div>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.corevalues")}</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {values.map((v, i) => (
               <div key={i}
                 className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 text-center shadow-md hover:shadow-xl border border-teal-100/60 hover:-translate-y-2 transition-all duration-300 group">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 group-hover:bg-teal-600 transition-colors duration-300">
-                  <v.icon className="w-5 h-5 sm:w-5.5 sm:h-5.5 lg:w-6 lg:h-6 text-teal-600 group-hover:text-white transition-colors duration-300" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-2xl bg-teal-600 sm:bg-teal-50 border border-teal-100 flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 group-hover:bg-teal-600 transition-colors duration-300">
+                  <v.icon className="w-5 h-5 sm:w-5.5 sm:h-5.5 lg:w-6 lg:h-6 text-white sm:text-teal-600 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h4 className="font-heading text-sm sm:text-base font-bold text-foreground mb-1.5 sm:mb-2">{t(v.titleKey)}</h4>
                 <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{t(v.descKey)}</p>
@@ -256,27 +275,29 @@ const About = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-6 sm:py-8 lg:py-10 bg-white">
+      <section className="pt-6 sm:pt-8 lg:pt-10 pb-0 bg-white">
         <div className="container mx-auto px-3 sm:px-4">
-          <div className="max-w-3xl mx-auto bg-gradient-to-br from-teal-800 to-emerald-900 rounded-3xl p-5 sm:p-7 lg:p-10 xl:p-14 text-center shadow-2xl relative overflow-hidden">
+          <div className="w-full bg-gradient-to-br from-teal-800 to-emerald-900 rounded-3xl p-5 sm:p-7 lg:p-10 xl:p-12 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-5"
               style={{ backgroundImage: `repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)`, backgroundSize: "30px 30px" }} />
-            <div className="relative z-10">
-              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-tight">
-                {t("about.joincommunity")}
-              </h2>
-              <p className="text-white/75 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 lg:mb-8 max-w-xl mx-auto leading-relaxed">
-                {t("about.jointext")}
-              </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center items-center self-center">
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
+              <div className="text-center lg:text-left lg:max-w-2xl">
+                <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-tight">
+                  {t("about.joincommunity")}
+                </h2>
+                <p className="text-white/75 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  {t("about.jointext")}
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center lg:justify-end items-center lg:items-center shrink-0">
                 <Button asChild size="lg"
-                  className="w-auto bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl hover:scale-105 transition-all duration-200">
+                  className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
                   <Link to="/contact" className="flex items-center justify-center gap-2">
                     {t("hero.apply")} <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </Link>
                 </Button>
                 <Button asChild size="lg"
-                  className="w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full hover:scale-105 transition-all duration-200">
+                  className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
                   <Link to="/donation">{t("hero.donate")}</Link>
                 </Button>
               </div>

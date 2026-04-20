@@ -29,37 +29,47 @@ const Donation = () => {
     <Layout>
 
       {/* ── HERO ── */}
-      <section className="relative h-[60vh] sm:h-[75vh] lg:h-[85vh] min-h-[420px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-auto sm:h-[80vh] min-h-0 flex items-start sm:items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg" alt="Donation hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-teal-900/70" />
+          <img src="/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg" alt="Donation" className="w-full h-full object-cover scale-110 transition-transform duration-[8s] ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-950/90 via-teal-900/80 to-emerald-950/90" />
         </div>
-        <div className="relative z-10 container mx-auto px-3 sm:px-4 text-center py-12 sm:py-16 md:py-20 lg:py-24">
-          <span className="inline-block bg-amber-600/90 text-white text-xs font-bold uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4 lg:mb-6">
-            {t("donation.supportus")}
-          </span>
-          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 lg:mb-5 leading-tight">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full border border-white/5" />
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.04]"
+            style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center py-12 sm:py-14 md:py-16 lg:py-20 max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <span className="text-amber-300 text-xs font-bold uppercase tracking-widest">{t("donation.supportus")}</span>
+          </div>
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
             {t("donation.title")}
           </h1>
-          <p className="text-white/75 text-sm sm:text-base md:text-lg max-w-xl mx-auto mb-4 sm:mb-6 lg:mb-8">
-            {t("donation.message")}
+          <div className="flex items-center justify-center gap-2 mb-5">
+            <div className="h-1 w-12 bg-amber-400 rounded-full" />
+            <div className="h-1 w-4 bg-amber-400/50 rounded-full" />
+            <div className="h-1 w-2 bg-amber-400/25 rounded-full" />
+          </div>
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            {t("hero.donation.desc")}
           </p>
-                  <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 lg:gap-4 justify-center items-start sm:items-center self-start sm:self-center">
-                    <Button asChild size="lg"
-                      className="w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base shadow-xl hover:scale-105 transition-all duration-200">
-                      <a href="https://wa.me/919876543210?text=I want to donate to DeeniMadarsa" target="_blank" rel="noopener noreferrer">
-                        {t("Donate Now")}
-                      </a>
-                    </Button>
-                    <Button asChild size="lg"
-                      className="w-auto bg-transparent border-2 border-white/60 text-white hover:bg-white/15 rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base hover:scale-105 transition-all duration-200">
-                      <Link to="/contact">{t("nav.contact")}</Link>
-                    </Button>
-                  </div>
+          <div className="flex flex-row flex-wrap gap-3 justify-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <Button asChild size="lg"
+              className="bg-amber-500 hover:bg-amber-400 text-white font-semibold rounded-full px-8 shadow-2xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
+              <Link to="/donation">{t("donation.button")}</Link>
+            </Button>
+            <Button asChild size="lg"
+              className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 rounded-full px-8 hover:scale-105 transition-all duration-200">
+              <Link to="/contact">{t("nav.contact")}</Link>
+            </Button>
+          </div>
         </div>
-        {/* Wave */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 leading-none translate-y-px">
-          <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display:"block", marginBottom:"-1px" }}>
+        <div className="absolute bottom-0 left-0 right-0 z-10 block leading-none translate-y-px" style={{ marginBottom: "-2px" }}>
+          <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none" style={{ display: "block", marginBottom: "-1px" }}>
             <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="#ffffff" />
           </svg>
         </div>
@@ -69,8 +79,8 @@ const Donation = () => {
       <section className="py-6 sm:py-8 lg:py-10 bg-white -mt-px">
         <div className="container mx-auto px-3 sm:px-4 max-w-4xl">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2 block">{t("donation.howtodonate")}</span>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">{t("donation.subtitle")}</h2>
+            <div className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-red-500" /><span className="text-red-700 text-xs font-bold uppercase tracking-widest">{t("donation.howtodonate")}</span></div>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("donation.subtitle")}</h2>
           </div>
 
           {showPaymentDetails ? (
@@ -130,7 +140,7 @@ const Donation = () => {
           )}
           <div className="mt-10 bg-slate-50 rounded-3xl border border-slate-200 p-6 sm:p-8 lg:p-10">
             <div className="mb-6 text-center">
-              <span className="text-xs font-bold uppercase tracking-widest text-red-600 mb-2 block">Donation Need Form</span>
+              <div className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-red-500" /><span className="text-red-700 text-xs font-bold uppercase tracking-widest">Donation Need Form</span></div>
               <h3 className="font-heading text-2xl sm:text-3xl font-bold text-foreground">Tell us about your donation need</h3>
               <p className="text-sm text-muted-foreground max-w-2xl mx-auto mt-2">
                 Share your name, email, phone number and reason, then tap Donate Now to continue on WhatsApp.

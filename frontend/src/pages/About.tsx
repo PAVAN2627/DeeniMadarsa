@@ -96,10 +96,6 @@ const About = () => {
         <div className="relative z-10 container mx-auto px-4 py-12 sm:py-14 md:py-16 lg:py-20 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span className="text-amber-300 text-xs font-bold uppercase tracking-widest">{t("about.est")}</span>
-              </div>
               <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
                 {t("about.title")}
               </h1>
@@ -163,43 +159,37 @@ const About = () => {
       </section>
 
       {/* ── HISTORY ── */}
-      <section className="py-6 sm:py-8 lg:py-10 bg-gradient-to-b from-background to-teal-50/40">
-        <div className="container mx-auto px-3 sm:px-4 max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-teal-500" /><span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("about.ourstory")}</span></div>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">{t("about.history.title")}</h2>
-          <p className="text-muted-foreground text-sm sm:text-base lg:text-lg leading-relaxed">{t("about.history.text")}</p>
+      <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-background to-teal-50/40">
+        <div className="container mx-auto px-3 sm:px-4 max-w-4xl">
+          <div className="rounded-3xl border border-teal-100/80 bg-white/90 shadow-sm px-5 sm:px-8 lg:px-10 py-6 sm:py-8 text-center">
+            <h2 className="section-headline section-headline-teal font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5">{t("about.history.title")}</h2>
+            <p className="text-muted-foreground text-sm sm:text-base lg:text-lg leading-relaxed">{t("about.history.text")}</p>
+          </div>
         </div>
       </section>
 
       {/* ── GALLERY ── */}
-      <section className="py-8 sm:py-12 bg-teal-50/40 overflow-hidden">
-        <div className="text-center mb-8 sm:mb-10 px-4">
-          <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
-            <span className="w-2 h-2 rounded-full bg-teal-500" />
-            <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">Our Campus</span>
-          </div>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Photo Gallery</h2>
-          <p className="text-muted-foreground text-sm mt-2">A glimpse into life at Darul Uloom Junaidia Ajmalia</p>
-        </div>
+      <section className="py-14 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-100 via-amber-50/80 to-slate-100 border-y border-slate-200 overflow-hidden">
+        <div className="w-full px-0">
+          <div className="w-full border-y border-slate-200/80 bg-white/95 shadow-xl px-0 sm:px-2 py-8 sm:py-10">
+            <div className="text-center mb-10 sm:mb-12 px-2 sm:px-4">
+              <h2 className="section-headline section-headline-slate font-heading text-3xl sm:text-4xl md:text-5xl font-bold">Photo Gallery</h2>
+              <p className="text-slate-600 text-sm sm:text-base mt-3">A glimpse into life at Darul Uloom Junaidia Ajmalia</p>
+            </div>
 
-        {/* Single auto-scroll row */}
-        <div className="relative">
-          {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-teal-50/40 to-transparent z-10 pointer-events-none" />
-          {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-teal-50/40 to-transparent z-10 pointer-events-none" />
-
-          <div className="flex gap-4 sm:gap-5 animate-[scroll-left_28s_linear_infinite] w-max px-4">
+            {/* Single auto-scroll row */}
+            <div className="relative">
+          <div className="flex gap-4 sm:gap-5 animate-[scroll-left_28s_linear_infinite] w-max px-2 sm:px-4">
             {[
               { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg", label: "Darul Uloom Campus" },
               { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",     label: "Campus View" },
               { src: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",     label: "Students Assembly" },
-              { src: "/building.jpeg",                                       label: "Main Building" },
+              { src: "/building2.png",                                       label: "Main Building" },
               // duplicate for seamless loop
               { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg", label: "Darul Uloom Campus" },
               { src: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",     label: "Campus View" },
               { src: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",     label: "Students Assembly" },
-              { src: "/building.jpeg",                                       label: "Main Building" },
+              { src: "/building2.png",                                       label: "Main Building" },
             ].map((img, i) => (
               <div key={i}
                 className="group relative shrink-0 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-teal-100"
@@ -215,7 +205,9 @@ const About = () => {
                 </div>
               </div>
             ))}
+            </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -223,8 +215,7 @@ const About = () => {
       <section className="py-6 sm:py-8 lg:py-10 bg-background">
         <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-teal-500" /><span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("about.purpose")}</span></div>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.missionvision")}</h2>
+            <h2 className="section-headline section-headline-emerald font-heading text-2xl sm:text-3xl md:text-4xl font-bold">{t("about.missionvision")}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {/* Mission */}
@@ -257,8 +248,7 @@ const About = () => {
       <section className="py-6 sm:py-8 lg:py-10 bg-teal-50/40">
         <div className="container mx-auto px-3 sm:px-4 max-w-5xl">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-amber-500" /><span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("about.whatdrivesus")}</span></div>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.corevalues")}</h2>
+            <h2 className="section-headline section-headline-amber font-heading text-2xl sm:text-3xl md:text-4xl font-bold">{t("about.corevalues")}</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {values.map((v, i) => (

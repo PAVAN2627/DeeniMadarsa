@@ -47,10 +47,6 @@ const Courses = () => {
             style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center py-12 sm:py-14 md:py-16 lg:py-20 max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-            <span className="text-yellow-300 text-xs font-bold uppercase tracking-widest">{t("courses.whatweoffer")}</span>
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
             {t("courses.title")}
           </h1>
@@ -84,8 +80,7 @@ const Courses = () => {
       <section className="py-4 sm:py-5 lg:py-6 bg-white -mt-px">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4"><span className="w-2 h-2 rounded-full bg-teal-500" /><span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("courses.whatweoffer")}</span></div>
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-1">{t("courses.title")}</h2>
+            <h2 className="section-headline section-headline-teal font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">{t("courses.title")}</h2>
             <p className="text-muted-foreground text-sm sm:text-base">{t("courses.subtitle")}</p>
           </div>
 

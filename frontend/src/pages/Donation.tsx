@@ -76,10 +76,6 @@ const Donation = () => {
             style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center py-12 sm:py-14 md:py-16 lg:py-20 max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-amber-300 text-xs font-bold uppercase tracking-widest">{t("donation.supportus")}</span>
-          </div>
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight animate-fade-up">
             {t("donation.title")}
           </h1>
@@ -115,11 +111,7 @@ const Donation = () => {
       <section className="py-6 sm:py-8 lg:py-10 bg-white -mt-px">
         <div className="container mx-auto px-3 sm:px-4 max-w-4xl">
           <div className="text-center mb-8 sm:mb-10 lg:mb-14">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber-500" />
-              <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("donation.howtodonate")}</span>
-            </div>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("donation.subtitle")}</h2>
+            <h2 className="section-headline section-headline-amber font-heading text-2xl sm:text-3xl md:text-4xl font-bold">{t("donation.subtitle")}</h2>
           </div>
 
           <div className="bg-amber-50/60 rounded-3xl border border-amber-100 p-6 sm:p-8 lg:p-10">

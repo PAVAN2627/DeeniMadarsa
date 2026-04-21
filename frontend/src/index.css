@@ -113,6 +113,55 @@
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out both;
   }
+
+  .section-headline {
+    @apply relative inline-block pb-3 tracking-tight;
+  }
+
+  .section-headline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    box-shadow: 0 4px 14px rgba(20, 184, 166, 0.35);
+  }
+
+  .section-headline-teal {
+    color: #0f5f63;
+  }
+
+  .section-headline-teal::after {
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+  }
+
+  .section-headline-emerald {
+    color: #115e59;
+  }
+
+  .section-headline-emerald::after {
+    background: linear-gradient(90deg, #0f766e, #16a34a);
+  }
+
+  .section-headline-amber {
+    color: #854d0e;
+  }
+
+  .section-headline-amber::after {
+    background: linear-gradient(90deg, #d97706, #f59e0b);
+  }
+
+  .section-headline-slate {
+    color: #0f172a;
+  }
+
+  .section-headline-slate::after {
+    background: linear-gradient(90deg, #1e293b, #475569);
+    box-shadow: 0 4px 14px rgba(71, 85, 105, 0.35);
+  }
 }
 
 @keyframes fadeUp {

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AdminLayout from "@/components/AdminLayout";
-import { CourseAPI, AnnouncementAPI, UserAPI } from "@/lib/api";
+import { CourseAPI, AnnouncementAPI } from "@/lib/api";
 
 type CountData = {
   courses: number;
   news: number;
-  users: number;
 };
 
 type CourseItem = {
@@ -27,14 +26,14 @@ type NewsItem = {
 
 const AdminDashboard = () => {
   const minVisibleRows = 3;
-  const [counts, setCounts] = useState<CountData>({ courses: 0, news: 0, users: 0 });
+  const [counts, setCounts] = useState<CountData>({ courses: 0, news: 0 });
   const [recentCourses, setRecentCourses] = useState<CourseItem[]>([]);
   const [activeNews, setActiveNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
     const load = async () => {
       try {
-        const [cRes, nRes, uRes] = await Promise.all([
+        const [cRes, nRes] = await Promise.all([
           CourseAPI.getAllAdmin(),
           AnnouncementAPI.getAdmin().catch(async (err) => {
             if (err.response?.status === 401) {
@@ -42,17 +41,14 @@ const AdminDashboard = () => {
             }
             throw err;
           }),
-          UserAPI.getAll()
         ]);
         
         const courses: CourseItem[] = Array.isArray(cRes.data?.data) ? cRes.data.data : [];
         const news: NewsItem[] = Array.isArray(nRes.data?.data) ? nRes.data.data : [];
-        const users = Array.isArray(uRes.data?.data) ? uRes.data.data : [];
 
         setCounts({
           courses: courses.length,
           news: news.length,
-          users: users.length,
         });
 
         setRecentCourses(courses.slice(0, 5));
@@ -66,7 +62,7 @@ const AdminDashboard = () => {
 
   return (
     <AdminLayout title="Dashboard">
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3">
         <div className="rounded-xl border border-teal-100 bg-teal-50 p-3 sm:p-4">
           <p className="text-sm text-teal-700">Courses</p>
           <p className="text-2xl font-bold text-teal-900 sm:text-3xl">{counts.courses}</p>
@@ -74,10 +70,6 @@ const AdminDashboard = () => {
         <div className="rounded-xl border border-amber-100 bg-amber-50 p-3 sm:p-4">
           <p className="text-sm text-amber-700">Announcements</p>
           <p className="text-2xl font-bold text-amber-900 sm:text-3xl">{counts.news}</p>
-        </div>
-        <div className="rounded-xl border border-emerald-100 bg-emerald-50 p-3 sm:p-4">
-          <p className="text-sm text-emerald-700">Users</p>
-          <p className="text-2xl font-bold text-emerald-900 sm:text-3xl">{counts.users}</p>
         </div>
       </div>
 

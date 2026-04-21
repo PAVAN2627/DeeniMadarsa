@@ -21,6 +21,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.welcome": "Welcome to Darul Uloom Junaidia Ajmalia",
     "hero.subtitle": "Providing Quality Islamic & Modern Education since 2004 — Mahend, Ghazipur, Uttar Pradesh",
+    "hero.slide1.badge": "Est. 2004",
+    "hero.slide2.badge": "20+ Years",
+    "hero.slide3.badge": "500+ Students",
     "hero.slide1.desc": "Join thousands of students who have built their foundation in Quran, Hadith, and modern sciences. Admissions open for the new academic year.",
     "hero.slide2.desc": "From Hifz-ul-Quran to modern academics — our structured programs are designed to nurture every student's potential and prepare them for life.",
     "hero.slide3.desc": "Your generous support keeps the doors of knowledge open. Help us continue providing free and subsidized education to deserving students.",
@@ -104,8 +107,6 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.donation.desc": "Your generous support helps us provide free education, food, and shelter to students who need it most. Every contribution counts.",
     "hero.contact.desc": "Have a question or want to enroll? We are here to help. Reach out to us and we will get back to you as soon as possible.",
     // About page extra
-    "about.est": "Established: 1 March 2004",
-    "about.whoweare": "Who We Are",
     "about.ourstory": "Our Story",
     "about.milestones": "Milestones",
     "about.ourjourney": "Our Journey",
@@ -162,7 +163,6 @@ const translations: Record<Language, Record<string, string>> = {
     "home.news.pinned": "Pinned",
     "home.news.event": "Event",
     "home.news.notice": "Notice",
-    "home.news.latest": "Latest Updates",
     "home.news.heading": "Announcements & News",
     "home.news.subheading": "Stay updated with the latest from Darul Uloom Junaidia Ajmalia",
     "home.news.admission.title": "New Admissions Open for 2026-27 Academic Year",
@@ -172,7 +172,6 @@ const translations: Record<Language, Record<string, string>> = {
     "home.news.eid.title": "Eid Holiday Schedule",
     "home.news.eid.desc": "Madarsa closed April 18-22 for Eid. Classes resume April 23.",
     // Courses page
-    "courses.whatweoffer": "What We Offer",
     "courses.readytojoin": "Ready to Begin Your Journey?",
     "courses.enrolltext": "Enroll today and take the first step towards comprehensive Islamic education.",
     // Contact & Donation
@@ -221,6 +220,9 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "رابطہ",
     "hero.welcome": "النور مدرسہ میں خوش آمدید",
     "hero.subtitle": "معیاری اسلامی اور جدید تعلیم — مہند، غازی پور، اتر پردیش",
+    "hero.slide1.badge": "قیام 2004",
+    "hero.slide2.badge": "20+ سال",
+    "hero.slide3.badge": "500+ طلباء",
     "hero.slide1.desc": "ہزاروں طلباء کے ساتھ شامل ہوں جنہوں نے قرآن، حدیث اور جدید علوم میں اپنی بنیاد مضبوط کی۔ نئے تعلیمی سال کے لیے داخلے کھلے ہیں۔",
     "hero.slide2.desc": "حفظ القرآن سے جدید تعلیم تک — ہمارے منظم پروگرام ہر طالب علم کی صلاحیتوں کو نکھارنے کے لیے بنائے گئے ہیں۔",
     "hero.slide3.desc": "آپ کی سخاوت علم کے دروازے کھلے رکھتی ہے۔ مستحق طلباء کو مفت اور سبسڈی والی تعلیم فراہم کرنے میں ہماری مدد کریں۔",
@@ -297,8 +299,6 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.donation.desc": "آپ کا سخاوتی تعاون ان طلباء کو مفت تعلیم، کھانا اور رہائش فراہم کرنے میں مدد کرتا ہے جنہیں اس کی سب سے زیادہ ضرورت ہے۔",
     "hero.contact.desc": "کوئی سوال ہے یا داخلہ لینا چاہتے ہیں؟ ہم یہاں مدد کے لیے موجود ہیں۔ ہم سے رابطہ کریں۔",
     // About page extra
-    "about.est": "قیام: 1 مارچ 2004",
-    "about.whoweare": "ہمارے بارے میں",
     "about.ourstory": "ہماری کہانی",
     "about.milestones": "سنگ میل",
     "about.ourjourney": "ہمارا سفر",
@@ -352,7 +352,6 @@ const translations: Record<Language, Record<string, string>> = {
     "home.leadership.subheading": "منیجر اور پرنسپل",
     "home.leadership.viewFaculty": "تمام اساتذہ دیکھیں",
     // Courses page
-    "courses.whatweoffer": "ہم کیا پیش کرتے ہیں",
     "courses.readytojoin": "اپنا سفر شروع کرنے کے لیے تیار ہیں؟",
     "courses.enrolltext": "آج ہی داخلہ لیں اور جامع اسلامی تعلیم کی طرف پہلا قدم اٹھائیں۔",
     // Contact & Donation
@@ -401,6 +400,9 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "संपर्क",
     "hero.welcome": "दारुल उलूम जुनैदिया अजमतिया में आपका स्वागत है",
     "hero.subtitle": "सन् 2004 से गुणवत्तापूर्ण इस्लामी और आधुनिक शिक्षा - महंद, गाजीपुर, उत्तर प्रदेश",
+    "hero.slide1.badge": "स्थापना 2004",
+    "hero.slide2.badge": "20+ वर्ष",
+    "hero.slide3.badge": "500+ छात्र",
     "hero.slide1.desc": "हजारों छात्रों के साथ जुड़ें जिन्होंने कुरान, हदीस और आधुनिक विज्ञान में अपनी नींव मजबूत की। नए शैक्षणिक वर्ष के लिए प्रवेश खुले हैं।",
     "hero.slide2.desc": "हिफ्ज़-उल-कुरान से आधुनिक शिक्षा तक — हमारे संरचित कार्यक्रम हर छात्र की क्षमता को निखारने के लिए बनाए गए हैं।",
     "hero.slide3.desc": "आपका उदार सहयोग ज्ञान के द्वार खुले रखता है। योग्य छात्रों को निःशुल्क और सब्सिडी वाली शिक्षा प्रदान करने में हमारी मदद करें।",
@@ -471,8 +473,6 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.form.submit": "संदेश भेजें",
     "contact.info.title": "संपर्क जानकारी",
     // About page extra
-    "about.est": "स्थापना: 1 मार्च 2004",
-    "about.whoweare": "हम कौन हैं",
     "about.ourstory": "हमारी कहानी",
     "about.milestones": "मुख्य पड़ाव",
     "about.ourjourney": "हमारी यात्रा",
@@ -529,7 +529,6 @@ const translations: Record<Language, Record<string, string>> = {
     "home.news.pinned": "पिन किया गया",
     "home.news.event": "कार्यक्रम",
     "home.news.notice": "सूचना",
-    "home.news.latest": "नवीनतम अपडेट",
     "home.news.heading": "घोषणाएं और समाचार",
     "home.news.subheading": "दारुल उलूम जुनैदिया अजमतिया की ताज़ा जानकारी देखें",
     "home.news.admission.title": "2026-27 शैक्षणिक सत्र के लिए नए प्रवेश शुरू",
@@ -539,7 +538,6 @@ const translations: Record<Language, Record<string, string>> = {
     "home.news.eid.title": "ईद अवकाश समय-सारणी",
     "home.news.eid.desc": "मदरसा 18-22 अप्रैल तक ईद अवकाश के कारण बंद रहेगा। कक्षाएं 23 अप्रैल से शुरू होंगी।",
     // Courses page
-    "courses.whatweoffer": "हम क्या प्रदान करते हैं",
     "courses.readytojoin": "क्या आप अपनी यात्रा शुरू करने के लिए तैयार हैं?",
     "courses.enrolltext": "आज ही प्रवेश लें और व्यापक इस्लामी शिक्षा की ओर पहला कदम बढ़ाएं।",
     // Contact & Donation

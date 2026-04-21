@@ -10,9 +10,9 @@ import Layout from "@/components/Layout";
 import { CourseAPI, AnnouncementAPI } from "@/lib/api";
 
 const slides = [
-  { id: 1, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg",  badge: "Est. 2004",  titleKey: "hero.welcome",      subtitleKey: "hero.subtitle",       descKey: "hero.slide1.desc" },
-  { id: 2, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",    badge: "20+ سال",        titleKey: "courses.title",     subtitleKey: "courses.subtitle",    descKey: "hero.slide2.desc" },
-  { id: 3, img: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",    badge: "500+ طلباء",     titleKey: "donation.subtitle", subtitleKey: "donation.message",    descKey: "hero.slide3.desc" },
+  { id: 1, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM (1).jpeg", badgeKey: "hero.slide1.badge", titleKey: "hero.welcome",      subtitleKey: "hero.subtitle",       descKey: "hero.slide1.desc" },
+  { id: 2, img: "/WhatsApp Image 2026-04-13 at 10.32.40 AM.jpeg",     badgeKey: "hero.slide2.badge", titleKey: "courses.title",     subtitleKey: "courses.subtitle",    descKey: "hero.slide2.desc" },
+  { id: 3, img: "/WhatsApp Image 2026-04-13 at 10.32.41 AM.jpeg",     badgeKey: "hero.slide3.badge", titleKey: "donation.subtitle", subtitleKey: "donation.message",    descKey: "hero.slide3.desc" },
 ];
 
 const stats = [
@@ -192,7 +192,7 @@ const Index = () => {
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 w-full overflow-hidden">
           <span key={`badge-${current}`}
             className="inline-block bg-yellow-500/95 text-white text-[11px] sm:text-xs font-bold uppercase tracking-widest px-3.5 sm:px-4 py-1.5 sm:py-1.5 rounded-full mb-4 sm:mb-4 lg:mb-6 animate-fade-in shadow-lg shadow-yellow-900/40">
-            {slide.badge}
+            {t(slide.badgeKey)}
           </span>
           <h1 key={`title-${current}`}
             className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 max-w-4xl leading-tight animate-fade-up drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
@@ -287,11 +287,7 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
-                <span className="w-2 h-2 rounded-full bg-teal-500" />
-                <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("about.whoweare")}</span>
-              </div>
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-5 leading-tight">
+              <h2 className="section-headline section-headline-teal font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight">
                 {t("about.preview.title")}
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
@@ -312,11 +308,7 @@ const Index = () => {
       <section className="py-8 sm:py-10 bg-teal-50/40">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 rounded-full bg-teal-500" />
-              <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("courses.whatweoffer")}</span>
-            </div>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">{t("courses.title")}</h2>
+            <h2 className="section-headline section-headline-teal font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-3">{t("courses.title")}</h2>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">{t("courses.subtitle")}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
@@ -361,11 +353,7 @@ const Index = () => {
       <section className="py-8 sm:py-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber-500" />
-              <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("home.news.latest")}</span>
-            </div>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">
+            <h2 className="section-headline section-headline-emerald font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
               {t("home.news.heading")}
             </h2>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
@@ -379,7 +367,6 @@ const Index = () => {
                 <div className={`h-1.5 bg-gradient-to-r ${newsColors[0]}`} />
                 <div className="p-5 sm:p-7">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-teal-600 text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">📌 {t("home.news.latest")}</span>
                     <span className="text-xs text-muted-foreground">{new Date(news[0].createdAt).toLocaleDateString()}</span>
                   </div>
                   <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-3">{news[0].title}</h3>
@@ -416,23 +403,16 @@ const Index = () => {
       <section className="py-6 sm:py-14 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-6 sm:mb-10">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 rounded-full bg-amber-500" />
-              <span className="text-amber-700 text-xs font-bold uppercase tracking-widest">{t("about.wordswisdom")}</span>
-            </div>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">{t("about.founder.title")}</h2>
+            <h2 className="section-headline section-headline-amber font-heading text-2xl sm:text-3xl md:text-4xl font-bold">{t("about.founder.title")}</h2>
           </div>
 
           <div className="relative bg-gradient-to-br from-teal-900 to-emerald-950 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-            {/* Dot pattern */}
             <div className="absolute inset-0 opacity-[0.06]"
               style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-            {/* Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-0">
-              {/* Founder image */}
               <div className="flex items-center justify-center p-5 sm:p-8 md:border-r border-white/10">
                 <div className="relative">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/30 to-teal-400/20 blur-xl scale-110" />
@@ -440,16 +420,13 @@ const Index = () => {
                     <img src="/founder.jpeg" alt="Founder" className="w-full h-full object-cover object-top" />
                     <div className="absolute inset-0 bg-gradient-to-t from-teal-950/60 to-transparent" />
                   </div>
-                  {/* Name badge */}
                   <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-max bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-center whitespace-nowrap">
                     Sajjada Nashin
                   </div>
                 </div>
               </div>
 
-              {/* Quote */}
               <div className="md:col-span-2 p-5 sm:p-10 flex flex-col justify-center">
-                {/* Large quote mark */}
                 <div className="text-amber-400/30 font-heading text-6xl sm:text-8xl leading-none mb-1 sm:mb-2 select-none">"</div>
                 <p className="font-heading text-base sm:text-xl md:text-2xl text-white/90 italic leading-relaxed mb-4 sm:mb-6 -mt-3 sm:-mt-6">
                   {t("about.founder.text").replace(/^"|".*$/g, '').replace(/ — .*$/, '')}
@@ -472,11 +449,7 @@ const Index = () => {
       <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-background to-teal-50/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 sm:mb-14">
-            <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 rounded-full bg-teal-500" />
-              <span className="text-teal-700 text-xs font-bold uppercase tracking-widest">{t("home.leadership.badge")}</span>
-            </div>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3">{t("home.leadership.heading")}</h2>
+            <h2 className="section-headline section-headline-teal font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-3">{t("faculty.title")}</h2>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">{t("home.leadership.subheading")}</p>
           </div>
 

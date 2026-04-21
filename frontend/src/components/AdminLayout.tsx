@@ -59,9 +59,6 @@ const AdminLayout = ({ title, children }: Props) => {
             <NavLink to="/admin/news" className={navClass} onClick={() => setSidebarOpen(false)}>
               Announcements
             </NavLink>
-            <NavLink to="/admin/users" className={navClass} onClick={() => setSidebarOpen(false)}>
-              Users
-            </NavLink>
           </nav>
 
           <Link

@@ -15,7 +15,6 @@ import NotFound from "./pages/NotFound";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminCourses from "./pages/AdminCourses";
 import AdminNews from "./pages/AdminNews";
-import AdminUsers from "./pages/AdminUsers";
 import AdminLogin from "./pages/AdminLogin";
 import AdminSignup from "./pages/AdminSignup";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -42,7 +41,6 @@ const App = () => (
             <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
             <Route path="/admin/courses" element={<ProtectedRoute><AdminCourses /></ProtectedRoute>} />
             <Route path="/admin/news" element={<ProtectedRoute><AdminNews /></ProtectedRoute>} />
-            <Route path="/admin/users" element={<ProtectedRoute><AdminUsers /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
    

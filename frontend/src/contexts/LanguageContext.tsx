@@ -53,10 +53,10 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.teacher1.qual": "Quran & Deeniyat",
     "faculty.teacher2.name": "Hafiz Qari Sabir Hussain",
     "faculty.teacher2.title": "Teacher",
-    "faculty.teacher2.qual": "Subjects: Urdu, Hindi",
+    "faculty.teacher2.qual": "Subjects: Urdu, Qira'at",
     "faculty.teacher3.name": "Hafiz Qari Imran Khan",
     "faculty.teacher3.title": "Teacher",
-    "faculty.teacher3.qual": "Subjects: Urdu, Hindi",
+    "faculty.teacher3.qual": "Subjects: Urdu, Qira'at ",
     // Donation
     "donation.title": "Support Islamic Education",
     "donation.subtitle": "Support Islamic Education for a Better Future",
@@ -142,6 +142,8 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.principal.title": "Principal",
     "faculty.principal.qual": "Quran & Deeniyat",
     "faculty.teacher.title": "Teacher",
+    
+
     "faculty.member.manager": "Syed Jagan Hasan Ajmali",
     "faculty.member.tabrez": "Hafiz MD Tanwir Zaki",
     "faculty.member.jabir": "Hafiz Qari Sabir Hussain",
@@ -150,10 +152,11 @@ const translations: Record<Language, Record<string, string>> = {
     "faculty.member.nizam": "Master Md. Nizamuddin",
     "faculty.member.jamshed": "Master Jamshed Khan",
     "faculty.member.pawan": "Master Parvej Ahmad",
-    "faculty.jabir.qual": "Subjects: Urdu, Hindi",
-    "faculty.usman.qual": "Subjects: Urdu, Hindi",
+    "faculty.jabir.qual": "Subjects: Urdu, Qira'at",
+    "faculty.usman.qual": "Subjects: Urdu, Qira'at ",
     "faculty.abdullah.qual": "Subjects: Arabic",
     "faculty.nizamuddin.qual": "Subjects: Hindi, Math",
+    
     "faculty.jamshed.qual": "Subjects: Math, General Knowledge",
     "faculty.pawan.qual": "Subjects: English, Social Science",
     "home.leadership.badge": "Leadership Team",

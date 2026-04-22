@@ -144,7 +144,7 @@ const Courses = () => {
                   {t("courses.enrolltext")}
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-4 justify-center lg:justify-end items-center lg:items-center flex-wrap shrink-0">
+              <div className="flex flex-row gap-3 justify-center lg:justify-end items-center shrink-0 flex-wrap">
                 <Button asChild size="lg"
                   className="w-auto bg-amber-500 hover:bg-amber-400 text-white font-bold px-6 sm:px-8 lg:px-10 py-2 sm:py-3 text-sm sm:text-base rounded-full shadow-xl shadow-amber-900/40 hover:scale-105 transition-all duration-200">
                   <Link to="/contact">{t("hero.apply")}</Link>

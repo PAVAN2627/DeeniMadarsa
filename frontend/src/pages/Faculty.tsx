@@ -11,7 +11,7 @@ const Faculty = () => {
       nameKey: "faculty.member.tabrez",
       titleKey: "faculty.principal.title",
       qualKey: "faculty.principal.qual",
-      img: "/principal.jpeg",
+      img: "/princpal new.jpeg",
       ring: "border-amber-300",
       stripe: "from-amber-500 to-yellow-600",
       glow: "from-amber-100 to-yellow-100",

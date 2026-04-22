@@ -23,11 +23,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-teal-200 text-sm mb-4 sm:mb-5 leading-relaxed max-w-sm">
-              Learning, growth, and responsibility.
-              <br />
-              Empowering individuals with values and skills.
-              <br />
-              Together for a better society.
+              {t("footer.desc")}
             </p>
             <h3 className="font-heading text-base font-bold mb-3 sm:mb-4 text-white">{t("footer.followus")}</h3>
             <div className="flex flex-wrap gap-2 sm:gap-2.5">
